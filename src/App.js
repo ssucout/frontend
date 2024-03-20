@@ -3,9 +3,9 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <div>
-        <p>숭실대학교 동아리 찾기 서비스에 오신 것을 환영합니다</p>
+        <p>숭실대학고 동아리 찾기 서비스에 오신 것을 환영합니다</p>
         <h1>SSU:Cout</h1>
       </div>
       <div>
