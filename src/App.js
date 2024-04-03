@@ -1,6 +1,6 @@
 import './App.css';
 import MainPage from './components/MainPage.js'
-import QuizMainPage from './components/QuizMainPage.js';
+import QuizMainPage from './components/Quiz/QuizMainPage.js';
 
 function App() {
   return (
