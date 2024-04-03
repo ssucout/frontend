@@ -1,5 +1,5 @@
 import React from 'react';
-import club_img from '../img/quiz_img.png';
+import club_img from '../../img/quiz_img.png';
 import './QuizMainPage.css';
 
 const QuizMainPage = () => {
