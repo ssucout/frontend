@@ -1,11 +1,12 @@
 import './App.css';
-import MainPage from './components/MainPage.js'
-import QuizMainPage from './components/QuizMainPage.js';
+import './index.css'
+//import MainPage from './components/MainPage.js'
+import QuizMainPage from './components/Quiz/QuizMainPage.js';
+//import Quiz1 from './components/Quiz/Quiz1.js';
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
       <QuizMainPage />
     </div>
   );
