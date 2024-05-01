@@ -1,8 +1,14 @@
 import React from 'react'
 import './MainPage.css';
-
+import { useNavigate } from 'react-router-dom';
 
 function MainPage() {  
+  
+  const navigate = useNavigate();
+
+  const goClubListPage = () => {
+    navigate('/clubs');
+  }
 
     return (
       <div className="background"> {}
@@ -15,12 +21,8 @@ function MainPage() {
         <button className="mainscript_box1_button_position">
           <span className="mainscript_box_text">나에게 맞는 동아리 찾아보기</span> {}
         </button>
-      
-        <button className="mainscript_box2_button_position">  
-          <span className="mainscript_box_text">동아리 지원하러 가기</span> {}
-        </button>
 
-        <button className="mainscript_box3_button_position">     
+        <button className="mainscript_box3_button_position" onClick={goClubListPage}>     
         
           <span className="mainscript_box_text">동아리 리뷰 살펴보기</span>
         </button> {}
@@ -33,4 +35,4 @@ function MainPage() {
   
 }
 
-export default MainPage
+export default MainPage;
