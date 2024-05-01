@@ -1,27 +1,28 @@
 /* 문답 시작 창 */
 .all{
     background-color: #D9D2D8;
-    position: relative;
+    /* position: relative; */
     width: 64rem;  
     height: 90rem;
 }
 
 
-button{
-    position: relative;
+.startButton{
+    position: absolute;
+    bottom: 22%;
+    transform: translateX(-50%); 
     width: 50rem;
     height: 9.375rem;
-    left: 5.0625rem;
+    left: 15%;
     background-color: #4F4F4F;
     color:#FFFFFF;
     border-radius: 4.375rem;
     margin-top: 2.5rem;
     font-size: 3.125rem;
     font-weight: 700;
-
 }
 
-img{
+.clubMainImg{
     width: 850px;
     height: 790px;
     position: relative ;
@@ -29,7 +30,7 @@ img{
     margin-left : 2.5rem;
 }
 
-p{
+.p1{
     text-align: center;
     font-size: 200%;
     margin-bottom: 0;
@@ -38,7 +39,7 @@ p{
     font-weight:700;
 }
 
-h2{
+.testText{
     text-align:center;
     font-size: 500%;
     margin-top:0;
