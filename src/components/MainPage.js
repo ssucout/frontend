@@ -1,5 +1,16 @@
-import React from 'react'
+import React, {useState } from 'react'
 import './MainPage.css';
+
+import MainModal from './MainModal';
+
+
+function MainPage() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
 import { useNavigate } from 'react-router-dom';
 
 function MainPage() {  
@@ -10,6 +21,7 @@ function MainPage() {
     navigate('/clubs');
   }
 
+
     return (
       <div className="background"> {}
         <div className="SSUCout"> {}
@@ -19,7 +31,10 @@ function MainPage() {
         <span className="welcome_mainscript">숭실대학교 동아리 찾기 서비스에 오신 것을 환영합니다</span> {}
       
         <button className="mainscript_box1_button_position">
-          <span className="mainscript_box_text">나에게 맞는 동아리 찾아보기</span> {}
+          <div className="mainscript_box_text">
+            <span onClick={openModal}>나에게 맞는 동아리 찾아보기</span>
+            <MainModal isOpen={isModalOpen} closeModal={closeModal} />
+            </div>
         </button>
 
         <button className="mainscript_box3_button_position" onClick={goClubListPage}>     

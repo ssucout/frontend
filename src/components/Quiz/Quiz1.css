@@ -8,7 +8,7 @@
     font-weight: 500;
 }
 
-button{
+.buttons{
     color: white;
     background-color: #4F4F4F;
     width: 50rem;
@@ -19,15 +19,12 @@ button{
     border-radius: 3.125rem;
     font-family: "The-Jams";
     font-weight: 500;
-}
-
-.buttons{
     text-align: center;
     margin-top: 18.75rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-p{
+.QuizNum1{
     text-align: center;
     padding-top: 4.375rem;
     font-size: 2.25rem;
@@ -36,7 +33,7 @@ p{
 
 }
 
-h2{
+.QuizSentence1{
     text-align: center;
     padding-top: 18.75rem;
     font-size: 4.5rem;
