@@ -8,6 +8,7 @@ import Quiz2 from './components/Quiz/Quiz2.js';
 import Quiz3 from './components/Quiz/Quiz3.js';
 import Quiz4 from './components/Quiz/Quiz4.js';
 import Quiz5 from './components/Quiz/Quiz5.js';
+import Quiz6 from './components/Quiz/Quiz6.js';
 import ClubListPage from './components/ClubListPage.js';
 import { useNavigate, BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -22,7 +23,8 @@ function App() {
           <Route path="/quiz/quiz2" element={<Quiz2 />} />          
           <Route path="/quiz/quiz3" element={<Quiz3 />} />    
           <Route path="/quiz/quiz4" element={<Quiz4 />} /> 
-          <Route path="/quiz/quiz5" element={<Quiz5 />} />          
+          <Route path="/quiz/quiz5" element={<Quiz5 />} />
+          <Route path="/quiz/quiz6" element={<Quiz6 />} />          
           <Route path="/clubs" element={<ClubListPage />} />         
         </Routes>
       </div>
