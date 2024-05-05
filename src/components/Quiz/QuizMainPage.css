@@ -1,17 +1,25 @@
 /* 문답 시작 창 */
 .all{
     background-color: #D9D2D8;
-    position: relative;
-    width: 64rem;  
+    position: absolute;
+    /* width: 64rem;   */
+    width:118.9375rem;
     height: 90rem;
 }
 
 
-button{
+.startButton{
+    background-color: #4F4F4F;
+    position: absolute;
+    bottom: 2%;
+    transform: translateX(-50%); 
+}
+/* button{
     position: relative;
+
     width: 50rem;
     height: 9.375rem;
-    left: 5.0625rem;
+    left: 15%;
     background-color: #4F4F4F;
     color:#FFFFFF;
     border-radius: 4.375rem;
@@ -19,17 +27,19 @@ button{
     font-size: 3.125rem;
     font-weight: 700;
 
-}
+} */
 
-img{
+
+
+.clubMainImg{
     width: 850px;
     height: 790px;
     position: relative ;
     margin: 0 auto;
-    margin-left : 2.5rem;
+    margin-left : 27.5%;
 }
 
-p{
+.p1{
     text-align: center;
     font-size: 200%;
     margin-bottom: 0;
@@ -38,13 +48,14 @@ p{
     font-weight:700;
 }
 
-h2{
+.testText{
     text-align:center;
     font-size: 500%;
     margin-top:0;
     color:#FFFFFF;
     font-weight: 1000;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
     -webkit-text-stroke: #4F4F4F .100rem;
 
 }
