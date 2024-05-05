@@ -24,6 +24,7 @@ const Box = styled.div`
   border-radius: 2.5rem;
   right: 27.5625rem;
   top: -40.5625rem;
+  
 `;
 
 const Button = styled.button`

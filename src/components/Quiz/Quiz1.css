@@ -1,15 +1,16 @@
 
 .all{
     background-color: #D9D2D8;
-    position: relative;
-    width: 64rem;  
+    position: absolute;
+    /* width: 64rem;   */
+    width:118.9375rem;
     height: 90rem;
     font-family: "The-Jams";
     font-weight: 500;
 }
 
-.buttons{
-    color: white;
+.button1_1{
+    color: rgb(255, 255, 255);
     background-color: #4F4F4F;
     width: 50rem;
     height: 9.375rem;
@@ -20,7 +21,23 @@
     font-family: "The-Jams";
     font-weight: 500;
     text-align: center;
-    margin-top: 18.75rem;
+    margin-top: 50.75rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.button1_2{
+    color: rgb(255, 255, 255);
+    background-color: #4F4F4F;
+    width: 50rem;
+    height: 9.375rem;
+    margin-top: 3.125rem;
+    top : 6.25rem;
+    font-size: 2.25rem;
+    border-radius: 3.125rem;
+    font-family: "The-Jams";
+    font-weight: 500;
+    text-align: center;
+    margin-top: 68.75rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
