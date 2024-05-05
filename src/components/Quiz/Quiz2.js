@@ -8,8 +8,8 @@ function Quiz2() {
     const navigate = useNavigate();
     return (
         <div className='all'>
-        <p className='QuizNum1'>2 / 10</p>
-        <h2 className='QuizSentence1'>눈이 오면?</h2>
+        <p className='QuizNum2'>2 / 10</p>
+        <h2 className='QuizSentence2'>눈이 오면?</h2>
         <div>
         <button className='button2_1' onClick={() => navigate('/quiz/quiz3')}>봄이 온다.</button>
         <br />
