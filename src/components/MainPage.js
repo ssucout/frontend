@@ -4,17 +4,15 @@ import './MainPage.css';
 import MainModal from './MainModal';
 
 
-function MainPage() {
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+//function MainPage() {
 
 import { useNavigate } from 'react-router-dom';
 
 function MainPage() {  
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   const navigate = useNavigate();
 
   const goClubListPage = () => {
