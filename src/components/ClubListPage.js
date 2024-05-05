@@ -1,45 +1,43 @@
-//0429 추가
+import React, { useState } from 'react';
+import './ClubListPage.css';  
+import { useNavigate } from 'react-router-dom';  
 
-import React from 'react'
-import './ClubListPage.css';
-import ListButton_img from '../img/ListButton.png';
+function ClubListPage() {
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
 
-//import { useNavigate } from 'react-router-dom';
-// function ClubListPage() {
-//     return(
-//     <div> ClubListPage </div>
-//     );
-// }
-function ClubListPage(){
+    const clubs = [
+        { id: 1, category: "종교분과", name: "가톨릭학생회" },
+        { id: 2, category: "스포츠분과", name: "축구동아리" },
+        { id: 3, category: "스포츠분과", name: "야구동아리" },
+        // 여기에 동아리 추가.
+    ];
+
+    const filteredClubs = clubs.filter(club => 
+        club.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
-
-        // <div>
-        //     <h1>Contacts</h1>
-        //     <input 
-        //         name="keyword"
-        //         placeholder="동아리 명을 입력하세요">
-                
-        //     </input>
-        // </div>
-
-        <div class="background">
-            <div class="background_white"></div>
-            <input class="searchbox">
-                
-            </input>
-            <div class="searchimage"></div>
-     
-            <button class="tab">
-                <img src="../img/ListButton.png"></img>
-            </button>
-            <div class="divide_bar"></div>
-           
-            <span  class="club_category">종교분과</span>
-            <span class="club_name">가톨릭학생회</span>
-           
+        <div className="background">
+            <div className="background_white"></div>
+            <input 
+                className="searchbox"
+                placeholder="동아리 명을 입력하세요"
+                onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <div className="searchimage"></div>
+            
+            <span className="empty_space"></span>
+            {filteredClubs.map(club => (
+                <div key={club.id} className="club_item" onClick={() => navigate(`/clubs/${club.id}`)}>
+                    <span className="club_category">{club.category}</span>
+                    <span className="club_name">{club.name}</span>
+                    <div className="divide_bar"></div>
+                </div>
+            ))}
         </div>
-  );
-
+    );
 }
+
 export default ClubListPage;
 
