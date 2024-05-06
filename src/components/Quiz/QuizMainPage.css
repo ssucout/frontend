@@ -1,16 +1,15 @@
 /* 문답 시작 창 */
 .all{
     background-color: #D9D2D8;
-    /* position: relative; */
-    width: 64rem;  
+    position: absolute;
+    /* width: 64rem;   */
+    width:118.9375rem;
     height: 90rem;
 }
-
-
-
 .startButton{
+    background-color: #4F4F4F;
     position: absolute;
-    bottom: 22%;
+    bottom: 2%;
     transform: translateX(-50%); 
 }
 /* button{
@@ -26,18 +25,14 @@
     font-size: 3.125rem;
     font-weight: 700;
 
-}
-
-
 } */
-
 
 .clubMainImg{
     width: 850px;
     height: 790px;
     position: relative ;
     margin: 0 auto;
-    margin-left : 2.5rem;
+    margin-left : 27.5%;
 }
 
 .p1{

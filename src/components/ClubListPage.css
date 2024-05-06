@@ -81,9 +81,6 @@
 	letter-spacing:0;
 }
  */
-
-
-
 .background { 
 	background-color:rgba(80.745849609375, 27.29115016758442, 65.77853634953499, 0.20000000298023224);
 	width:118.9375rem;
@@ -127,7 +124,7 @@
 
 }
 .searchimage {
-    background: url('../img/ListButton.png') no-repeat;
+    /* background: url('../img/ListButton.png') no-repeat; */
     width: 1.25rem;
     height: 1.25rem;
 }
