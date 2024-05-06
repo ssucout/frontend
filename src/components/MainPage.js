@@ -1,8 +1,6 @@
 import React, {useState } from 'react'
 import './MainPage.css';
 import MainModal from './MainModal';
-
-
 import { useNavigate } from 'react-router-dom';
 
 function MainPage() {  
@@ -31,15 +29,10 @@ function MainPage() {
             <span onClick={openModal}>나에게 맞는 동아리 찾아보기</span>
             <MainModal isOpen={isModalOpen} closeModal={closeModal} />
             </div>
-        </button>
-      
-
-        
+        </button>            
         <button className="mainscript_box3_button_position" onClick={goClubListPage}>             
           <span className="mainscript_box_text">동아리 리뷰 살펴보기</span>
-        </button> {}
-        
-
+        </button> {}      
         <button className="mainscript_box4_button_position"> {}
           <span className="mainscript_box_text">동아리방 둘러보기</span> {}
         </button>
