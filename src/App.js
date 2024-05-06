@@ -19,7 +19,6 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<MainPage />} />
-
           <Route path="/quiz" element={<QuizMainPage />}/>
           <Route path="/quiz/quiz1" element={<Quiz1 />} />          
           <Route path="/quiz/quiz2" element={<Quiz2 />} />          
