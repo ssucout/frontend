@@ -1,7 +1,8 @@
 import React from 'react';
+import { useNavigate, BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './index.css'
-import MainPage from './components/MainPage.js'
+import MainPage from './components/MainPage.jsx'
 import QuizMainPage from './components/Quiz/QuizMainPage.js';
 import Quiz1 from './components/Quiz/Quiz1.js';
 import Quiz2 from './components/Quiz/Quiz2.js';
@@ -10,17 +11,7 @@ import Quiz4 from './components/Quiz/Quiz4.js';
 import Quiz5 from './components/Quiz/Quiz5.js';
 import Quiz6 from './components/Quiz/Quiz6.js';
 import Quiz7 from './components/Quiz/Quiz7.js';
-// import Quiz1 from './components/Quiz/Quiz1.js'; 
-
-// function App() {
-//   return (
-//     <div className="App">
-//       {/* <MainPage /> */}
-//       <QuizMainPage />
-//       {/* <Quiz1 /> */}
-//     </div>
 import ClubListPage from './components/ClubListPage.js';
-import { useNavigate, BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
