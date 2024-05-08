@@ -1,0 +1,174 @@
+/* .background { 
+	background-color:rgba(80.745849609375, 27.29115016758442, 65.77853634953499, 0.20000000298023224);
+	width:1903px;
+	height:1440px;
+	position:absolute;
+	text-align: center;
+}
+.background_white { 
+	background-color:rgba(255, 255, 255, 1);
+	width:1903px;
+	height:1100px;
+	position:absolute;
+	left:0px;
+	top:341px;
+}
+.searchbox { 
+	background-color:rgba(255, 255, 255, 1);
+	width:927px;
+	height:137px;
+	position:absolute;
+	top:68px;
+	border-top-left-radius:60px;
+	border-top-right-radius:60px;
+	border-bottom-left-radius:60px;
+	border-bottom-right-radius:60px;
+	left: 50%;
+    transform: translateX(-50%);
+}
+.searchbox { 
+	border:1px solid rgba(0, 0, 0, 1);
+}
+.searchimage { 
+	
+}
+.star{
+
+}
+
+.tab { 
+	width:59px;
+	height:63px;
+	position:absolute;
+	left:71px;
+	top:261px;
+    
+	background-image:"./img/ListButton.png";
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.divide_bar { 
+	border:2px solid rgba(196.16406351327896, 196.16406351327896, 196.16406351327896, 1);
+	width:1791px;
+	height:0px;
+	position:absolute;
+	left:68px;
+	top:469px;
+}
+
+.club_category { 
+	color:rgba(0, 0, 0, 1);
+	width:100px;
+	height:29px;
+	position:absolute;
+	left:100px;
+	top:409px;
+	font-family:Inter;
+	text-align:left;
+	font-size:24px;
+	letter-spacing:0;
+}
+.club_name{ 
+	color:rgba(0, 0, 0, 1);
+	width:221px;
+	height:48px;
+	position:absolute;
+	left:266px;
+	top:399px;
+	font-family:Inter;
+	text-align:left;
+	font-size:36px;
+	letter-spacing:0;
+}
+ */
+.background { 
+	background-color:rgba(80.745849609375, 27.29115016758442, 65.77853634953499, 0.20000000298023224);
+	width:118.9375rem;
+	height:90rem;
+	position:absolute;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 1.25rem;
+}
+.background_white { 
+	background-color:rgba(255, 255, 255, 1);
+	width:118.9375rem;
+	height:68.75rem;
+	position:absolute;
+	left:0rem;
+	top:21.3125rem;
+}
+
+
+.searchbox { 
+	background-color:rgba(255, 255, 255, 1);
+	width: 57.9375rem;
+	height:8.5625rem;
+	position:relative;
+	top:4.25rem;
+	border-top-left-radius:3.75rem;
+	border-top-right-radius:3.75rem;
+	border-bottom-left-radius:3.75rem;
+	border-bottom-right-radius:3.75rem;
+	left: 0%;    
+}
+.searchbox { 
+	border:0.0625rem solid rgba(255, 255, 255, 0.877);
+	margin-bottom: 1.25rem;
+}
+.searchbox::placeholder{
+	font-size:2rem;
+	line-height: 100;
+
+}
+.searchimage {
+    /* background: url('../img/ListButton.png') no-repeat; */
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.club_item {
+    cursor:pointer;
+    border: .0625rem solid #ccc;
+	/* margin-top: 10%;    	 */
+	padding: 1.5%;
+	
+}
+
+.empty_space{
+	margin-top:9%;
+}
+
+.divide_bar { 
+	border:2px solid rgba(196.16406351327896, 196.16406351327896, 196.16406351327896, 1);
+	width:111.875rem;
+	height:0rem;
+	position:relative;
+	top: 20%;
+	margin: 1.25rem 0;
+} 
+
+
+.club_category { 
+	color:rgba(0, 0, 0, 1);
+	width:6.25rem;
+	height:1.8125rem;
+	position:relative;
+	font-family:Inter;
+	text-align:left;
+	font-size:1.5rem;
+}
+
+.club_name{ 
+	color:rgba(0, 0, 0, 1);
+	width:13.8125rem;
+	height:3rem;
+	position:relative;
+	left:9.375rem;
+	font-family:Inter;
+	text-align:left;
+	font-size:2.25rem;
+	margin-right: 70%;
+}

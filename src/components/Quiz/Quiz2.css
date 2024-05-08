@@ -1,4 +1,3 @@
-
 .all{
     background-color: #D9D2D8;
     position: absolute;
@@ -9,7 +8,23 @@
     font-weight: 500;
 }
 
-.button1_1{
+.button2_1{
+    color: rgb(255, 255, 255);
+    background-color: #4F4F4F;
+    width: 50rem; 
+    height: 9.375rem;
+    margin-top: 3.125rem;
+    top : 0rem;
+    font-size: 2.25rem;
+    border-radius: 3.125rem;
+    font-family: "The-Jams";
+    font-weight: 500;
+    text-align: center;
+    margin-top: 45.75rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.button2_2{
     color: rgb(255, 255, 255);
     background-color: #4F4F4F;
     width: 50rem;
@@ -25,7 +40,7 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.button1_2{
+.button2_3{
     color: rgb(255, 255, 255);
     background-color: #4F4F4F;
     width: 50rem;
@@ -37,10 +52,25 @@
     font-family: "The-Jams";
     font-weight: 500;
     text-align: center;
-    margin-top: 68.75rem;
+    margin-top: 61.75rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.QuizNum1{
+.button2_4{
+    color: rgb(255, 255, 255);
+    background-color: #4F4F4F;
+    width: 50rem;
+    height: 9.375rem;
+    margin-top: 3.125rem;
+    top : 6.25rem;
+    font-size: 2.25rem;
+    border-radius: 3.125rem;
+    font-family: "The-Jams";
+    font-weight: 500;
+    text-align: center;
+    margin-top: 72.75rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.QuizNum2{
     text-align: center;
     padding-top: 4.375rem;
     font-size: 2.25rem;
@@ -49,9 +79,10 @@
 
 }
 
-.QuizSentence1{
+.QuizSentence2{
     text-align: center;
     padding-top: 18.75rem;
     font-size: 4.5rem;
     color: #656161;
 }
+
