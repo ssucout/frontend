@@ -3,7 +3,7 @@ import { useNavigate, BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './index.css'
 import MainPage from './components/MainPage.jsx'
-import QuizMainPage from './components/Quiz/QuizMainPage.js';
+import QuizMainPage from './components/Quiz/QuizMainPage.jsx';
 import Quiz1 from './components/Quiz/Quiz1.jsx';
 import Quiz2 from './components/Quiz/Quiz2.js';
 import Quiz3 from './components/Quiz/Quiz3.js';
