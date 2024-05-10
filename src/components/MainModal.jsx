@@ -8,6 +8,9 @@ function MainModal({isOpen, closeModal}) {
   const QuizPage = () => {
     navigate('/quiz');
   }
+  const FacePage = () => {
+    navigate('/face');
+  }
   return (
     <>
     <div style={{ display: isOpen ? "block" : "none" }}>
@@ -17,7 +20,7 @@ function MainModal({isOpen, closeModal}) {
             <ButtonContainer>
             <ModalText>나에게 맞는 동아리 찾아보기</ModalText>
             <XButton onClick={closeModal}>x</XButton>
-            <Button1>관상으로 <br />나에게 맞는 동아리<br/> 찾으러 가기</Button1>
+            <Button1 onClick={FacePage}>관상으로 <br />나에게 맞는 동아리<br/> 찾으러 가기</Button1>
             <Button2 onClick={QuizPage}>문답으로 <br />나에게 맞는 동아리 <br />찾으러 가기</Button2>
 
             </ButtonContainer>

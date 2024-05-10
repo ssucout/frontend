@@ -35,3 +35,9 @@ code {
 	src: url('./fonts/Pretendard-Bold.woff');
 	font-style: normal;
 }
+
+@font-face {
+	font-family: "Pretendard-ExtraBold";
+	src: url('./fonts/Pretendard-ExtraBold.woff');
+	font-style: normal;
+}

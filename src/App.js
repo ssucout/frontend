@@ -4,8 +4,9 @@ import './App.css';
 import './index.css'
 import MainPage from './components/MainPage.jsx'
 import QuizMainPage from './components/Quiz/QuizMainPage.jsx';
+import FacePage from './components/FaceMainPage.jsx';
 import Quiz1 from './components/Quiz/Quiz1.jsx';
-import Quiz2 from './components/Quiz/Quiz2.js';
+import Quiz2 from './components/Quiz/Quiz2.js'; 
 import Quiz3 from './components/Quiz/Quiz3.js';
 import Quiz4 from './components/Quiz/Quiz4.js';
 import Quiz5 from './components/Quiz/Quiz5.js';
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
 
           <Route path="/quiz" element={<QuizMainPage />}/>
+          <Route path="/face" element={<FacePage />}/>
           {/* <Route path="/quiz/quiz1" element={<Quiz1 />} />          
           <Route path="/quiz/quiz2" element={<Quiz2 />} />          
           <Route path="/quiz/quiz3" element={<Quiz3 />} />    
