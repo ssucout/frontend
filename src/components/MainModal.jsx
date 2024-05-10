@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
+
 function MainModal({isOpen, closeModal}) {
   const navigate = useNavigate();
   const QuizPage = () => {
@@ -18,6 +19,7 @@ function MainModal({isOpen, closeModal}) {
             <XButton onClick={closeModal}>x</XButton>
             <Button1>관상으로 <br />나에게 맞는 동아리<br/> 찾으러 가기</Button1>
             <Button2 onClick={QuizPage}>문답으로 <br />나에게 맞는 동아리 <br />찾으러 가기</Button2>
+
             </ButtonContainer>
             </Box>
         </div>

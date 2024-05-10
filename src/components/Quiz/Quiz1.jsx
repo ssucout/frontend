@@ -15,7 +15,6 @@ function Quiz1() {
         <Button onClick={() => navigate('/quiz/quiz2')}>처음 만나는 동기...!! 먼저 인사를 건네본다</Button>
         </Buttons>
     </Background>
-    
   )
 }
 
