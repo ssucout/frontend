@@ -46,7 +46,7 @@ const QuizSentence2 = styled.div`
 `;
 
 const Buttons2 = styled.div`
-    margin-top: 15rem;
+    margin-top: 12rem;
     position: absolute;
     transform: translateX(-50%);
     left: 50%;
@@ -67,7 +67,7 @@ const Button2 = styled.button`
 `;
 
 const ButtonGap2 = styled.div`
-    margin-top: 1rem;
+    margin-top: 2rem;
 `;
 
   export default Quiz2;

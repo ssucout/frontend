@@ -6,7 +6,7 @@ import MainPage from './components/MainPage.jsx'
 import QuizMainPage from './components/Quiz/QuizMainPage.jsx';
 import FacePage from './components/FaceMainPage.jsx';
 import Quiz1 from './components/Quiz/Quiz1.jsx';
-import Quiz2 from './components/Quiz/Quiz2.js'; 
+import Quiz2 from './components/Quiz/Quiz2.jsx'; 
 import Quiz3 from './components/Quiz/Quiz3.js';
 import Quiz4 from './components/Quiz/Quiz4.js';
 import Quiz5 from './components/Quiz/Quiz5.js';
