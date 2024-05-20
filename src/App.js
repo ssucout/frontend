@@ -19,6 +19,8 @@ import QuizNavigator from './components/QuizNavigator.js';
 import ResultPage from './components/ResultPage.js';
 import ResultPage2 from './components/ResultPage2.js';
 
+import ClubInfoPage from './components/ClubInfoPage.jsx';
+import MakeReview from './components/MakeReview.jsx';
 
 function App() {
   // const navigate = useNavigate();
@@ -43,6 +45,8 @@ function App() {
           <Route path="/clubs" element={<ClubListPage />} />         
           <Route path="/result" element={<ResultPage />} />
           <Route path="/result2" element={<ResultPage2 />} />
+          <Route path="/clubs/*" element={<ClubInfoPage/>}/>
+          <Route path="/clubs/*/review" element={<MakeReview/>}/>
         </Routes>
       </div>
     </BrowserRouter>
