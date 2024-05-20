@@ -73,6 +73,20 @@ const QuizSentence = styled.div`
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   `;
 
+  const Button2 = styled.button`
+    background-color : white;
+    color: #818181;
+    width: 26.6875rem;
+    height: 15.8125rem;
+    font-size: 2rem;
+    font-family: "The-Jams";
+    text-align: center;
+    margin-right: 1rem;
+    border-radius: 1.25rem;
+    border-width: .3125rem;
+    border-color: #939393;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  `;
   const ButtonGap = styled.div`
     margin-top : 1rem;
   `;

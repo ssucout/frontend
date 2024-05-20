@@ -29,7 +29,7 @@ function ClubListPage() {
             
             <span className="empty_space"></span>
             {filteredClubs.map(club => (
-                <div key={club.id} className="club_item" onClick={() => navigate(`/clubs/${club.id}`)}>
+                <div key={club.id} className="club_item" onClick={() => navigate(`/clubs/${club.id}`, {state:{club: club}})}>
                     <span className="club_category">{club.category}</span>
                     <span className="club_name">{club.name}</span>
                     <div className="divide_bar"></div>
