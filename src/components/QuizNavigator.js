@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Quiz1 from './Quiz/Quiz1.jsx';
 import Quiz2 from './Quiz/Quiz2.jsx';
 import Quiz3 from './Quiz/Quiz3.jsx';
-import Quiz4 from './Quiz/Quiz4.js';
+import Quiz4 from './Quiz/Quiz4.jsx';
 import Quiz5 from './Quiz/Quiz5.js';
 import Quiz6 from './Quiz/Quiz6.js';
 import Quiz7 from './Quiz/Quiz7.js';
