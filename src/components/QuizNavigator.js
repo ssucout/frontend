@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Quiz1 from './Quiz/Quiz1.js';
-import Quiz2 from './Quiz/Quiz2.js';
+import Quiz1 from './Quiz/Quiz1.jsx';
+import Quiz2 from './Quiz/Quiz2.jsx';
 import Quiz3 from './Quiz/Quiz3.js';
 import Quiz4 from './Quiz/Quiz4.js';
 import Quiz5 from './Quiz/Quiz5.js';
