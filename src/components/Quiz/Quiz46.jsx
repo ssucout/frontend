@@ -1,18 +1,18 @@
 import React from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Quiz4_6({onAnswer}) {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <Background>
         <QuizNum>4 / 10</QuizNum>
         <QuizSentence>채플 출석을 다 채운 후 나는</QuizSentence>
         <Buttons>
-        <Button>아 8번 다 채웠네 이제 안가도 되겠지 ~?</Button>
+        <Button onClick={() => navigate('/quiz/result/ch')}>아 8번 다 채웠네 이제 안가도 되겠지 ~?</Button>
         <ButtonGap />
-        <Button>그래도 채플시간이니까 가서 예배드려야겠다!!</Button>
+        <Button onClick={() => navigate('/quiz/result/ch')}>그래도 채플시간이니까 가서 예배드려야겠다!!</Button>
         </Buttons>
     </Background>
   )

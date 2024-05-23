@@ -13,9 +13,9 @@ function Quiz4_1({onAnswer}) {
         <Buttons>
         <Button onClick={() => navigate('/quiz/quiz5')}>나의 노래/악기 실력을 뽐내고 싶다.</Button>
         <ButtonGap />
-        <Button onClick={() => onAnswer(2, '',true)}>기깔난 나의 춤선을 보여주고 싶다.</Button>
+        <Button onClick={() => navigate('/quiz/result/dan')}>기깔난 나의 춤선을 보여주고 싶다.</Button>
         <ButtonGap />
-        <Button onClick={() => onAnswer(3, '',true)}>메소드 연기로 다른 사람들에게 감동을 주고 싶다.</Button>               
+        <Button onClick={() => navigate('/quiz/result/act')}>메소드 연기로 다른 사람들에게 감동을 주고 싶다.</Button>               
         </Buttons>
     </Container>
     )

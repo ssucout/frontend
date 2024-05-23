@@ -10,9 +10,9 @@ function Quiz5({onAnswer}) {
         <QuizNum>5 / 10</QuizNum>
         <QuizSentence>나는 클래식 음악을 들으면</QuizSentence>
         <Buttons>
-        <Button>힐링된다</Button>
+        <Button onClick={() => navigate('/quiz/result/mu1')}>힐링된다</Button>
         <ButtonGap />
-        <Button>졸리다</Button>
+        <Button onClick={() => navigate('/quiz/result/mu2')}>졸리다</Button>
         </Buttons>
     </Container>
     

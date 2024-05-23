@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Quiz4_2({onAnswer}) {
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <Container>
         <QuizNum>4 / 10</QuizNum>
         <QuizSentence>나는</QuizSentence>
         <Buttons>
-        <Button>2D가 좋다.</Button>
+        <Button onClick={() => navigate('/quiz/result/2d')}>2D가 좋다.</Button>
         <ButtonGap />
-        <Button>3D가 좋다.</Button>
+        <Button onClick={() => navigate('/quiz/result/2d')}>3D가 좋다.</Button>
         </Buttons>
     </Container>
     

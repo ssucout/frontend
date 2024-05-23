@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from 'styled-components';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Quiz4_4() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <Container>
         <QuizNum>4 / 10</QuizNum>
         <QuizSentence>나는 운동을 할 때</QuizSentence>
         <Buttons>
-        <Button>개인의 역량이 중요한 운동이 좋다</Button>
+        <Button onClick={() => navigate('/quiz/result/ath2')}>개인의 역량이 중요한 운동이 좋다</Button>
         <ButtonGap />
-        <Button>다른 사람들과 함께 운동하며 <br /> 팀워크를 쌓는게 좋다</Button>
+        <Button onClick={() => navigate('/quiz/result/ath1')}>다른 사람들과 함께 운동하며 <br /> 팀워크를 쌓는게 좋다</Button>
         </Buttons>
     </Container>
     
