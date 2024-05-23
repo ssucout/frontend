@@ -1,18 +1,18 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Quiz1({onAnswer}) {
-  const navigate = useNavigate();
+function Quiz4_6({onAnswer}) {
+  // const navigate = useNavigate();
 
   return (
     <Background>
-        <QuizNum>1 / 10</QuizNum>
-        <QuizSentence>새터에 간 당신, <br /> 옆 자리에 앉은 사람에게</QuizSentence>
+        <QuizNum>4 / 10</QuizNum>
+        <QuizSentence>채플 출석을 다 채운 후 나는</QuizSentence>
         <Buttons>
-        <Button onClick={() => navigate('/quiz/quiz2')}>앗 모르는 사람.... 먼저 말을 걸 때까지 기다린다</Button>
+        <Button>아 8번 다 채웠네 이제 안가도 되겠지 ~?</Button>
         <ButtonGap />
-        <Button onClick={() => navigate('/quiz/quiz2')}>처음 만나는 동기...!! 먼저 인사를 건네본다</Button>
+        <Button>그래도 채플시간이니까 가서 예배드려야겠다!!</Button>
         </Buttons>
     </Background>
   )
@@ -43,7 +43,7 @@ const QuizSentence = styled.div`
 `;
 
 const Buttons = styled.div`
-    margin-top: 20rem;
+    margin-top: 30rem;
     position: absolute;
     transform: translateX(-50%);
     left: 50%;
@@ -65,4 +65,4 @@ const Button = styled.button`
 const ButtonGap = styled.div`
   margin-top: 3.125rem;
 `;
-export default Quiz1;
+export default Quiz4_6;

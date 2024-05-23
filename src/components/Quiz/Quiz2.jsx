@@ -1,21 +1,21 @@
 import React from 'react'
 import styled from 'styled-components';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Quiz2({onAnswer}) {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     return (
         <Background>
             <QuizNum2>2 / 10</QuizNum2>
             <QuizSentence2>눈이 오면?</QuizSentence2>
             <Buttons2>
-                <Button2 onClick={() => onAnswer(1, '/quiz/quiz3')}>봄이 온다.</Button2>
+                <Button2 onClick={() => navigate('/quiz/quiz3')}>봄이 온다.</Button2>
                     <ButtonGap2 />
-                <Button2 className='button2_2' onClick={() => onAnswer(2, '/quiz/quiz3')}>물이 된다.</Button2>
+                <Button2 onClick={() => navigate('/quiz/quiz3')}>물이 된다.</Button2>
                     <ButtonGap2 />
-                <Button2 className='button2_3' onClick={() => onAnswer(3, '/quiz/quiz3')}>그에 따른 피해는 없었는지 찾아본다.</Button2>
+                <Button2 onClick={() => navigate('/quiz/quiz3')}>그에 따른 피해는 없었는지 찾아본다.</Button2>
                     <ButtonGap2 />
-                <Button2 className='button2_4' onClick={() => onAnswer(4, '/quiz/quiz3')}>눈에 대해서 사람들과 대화를 나누고 싶다..</Button2>
+                <Button2 onClick={() => navigate('/quiz/quiz3')}>눈에 대해서 사람들과 대화를 나누고 싶다..</Button2>
         </Buttons2>
     </Background>
     )
