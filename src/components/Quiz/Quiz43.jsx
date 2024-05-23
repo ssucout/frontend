@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-function Quiz4_3({onAnswer}) {
+function Quiz4_3() {
   const navigate = useNavigate();
 
   return (
@@ -10,9 +10,9 @@ function Quiz4_3({onAnswer}) {
         <QuizNum>4 / 10</QuizNum>
         <QuizSentence>내가 선호하는 봉사활동은</QuizSentence>
         <Buttons>
-        <Button onClick={() => navigate('/quiz/quiz5')}>행사 staff, 줍깅과 같은 일회성 봉사</Button>
+        <Button onClick={() => navigate('/quiz/result/vol1')}>행사 staff, 줍깅과 같은 일회성 봉사</Button>
         <ButtonGap />
-        <Button onClick={() => onAnswer(2, '',true)}>교육 봉사와 같은 정기 봉사</Button>
+        <Button onClick={() => navigate('/quiz/result/vol1')}>교육 봉사와 같은 정기 봉사</Button>
         </Buttons>
     </Container>
     

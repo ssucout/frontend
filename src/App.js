@@ -15,6 +15,7 @@ import Quiz44 from './components/Quiz/Quiz44.jsx';
 import Quiz45 from './components/Quiz/Quiz45.jsx';
 import Quiz46 from './components/Quiz/Quiz46.jsx';
 import Quiz5 from './components/Quiz/Quiz5.jsx';
+import ResultMu1 from './components/QuizResult/ResultMu1.jsx';
 import ClubListPage from './components/ClubListPage.js';
 
 import ResultPage from './components/ResultPage.js';
@@ -43,7 +44,8 @@ function App() {
           <Route path="/quiz/quiz4_4" element={<Quiz44 />} />
           <Route path="/quiz/quiz4_5" element={<Quiz45 />} /> 
           <Route path="/quiz/quiz4_6" element={<Quiz46 />} />
-          <Route path="/quiz/quiz5" element={<Quiz5 />} />           
+          <Route path="/quiz/quiz5" element={<Quiz5 />} />
+          <Route path="/quiz/result/mu1" element={<ResultMu1 />} />           
           <Route path="/clubs" element={<ClubListPage />} />         
           <Route path="/result" element={<ResultPage />} />
           <Route path="/result2" element={<ResultPage2 />} />
