@@ -43,8 +43,8 @@ const MainText = styled.div`
 `;
 
 const Image = styled.img`
-    width: 850px;
-    height: 790px;
+    width: 53.125rem;
+    height: 49.375rem;
     position: relative ;
     margin: 0 auto;
     margin-left : 27.5%;

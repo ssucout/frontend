@@ -1,35 +1,33 @@
 import React from 'react'
 import styled from 'styled-components';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
+function Quiz4_2({onAnswer}) {
+  const navigate = useNavigate();
 
-
-function Quiz4({onAnswer}) {
-    return (
-        <Container>
+  return (
+    <Container>
         <QuizNum>4 / 10</QuizNum>
-        <QuizSentence>나는 무대에서</QuizSentence>
+        <QuizSentence>나는</QuizSentence>
         <Buttons>
-        <Button onClick={() => onAnswer(1, '',true)}>나의 노래/악기 실력을 뽐내고 싶다.</Button>
+        <Button onClick={() => navigate('/quiz/result/2d')}>2D가 좋다.</Button>
         <ButtonGap />
-        <Button onClick={() => onAnswer(2, '',true)}>기깔난 나의 춤선을 보여주고 싶다.</Button>
-        <ButtonGap />
-        <Button onClick={() => onAnswer(3, '',true)}>메소드 연기로 다른 사람들에게 감동을 주고 싶다.</Button>               
+        <Button onClick={() => navigate('/quiz/result/2d')}>3D가 좋다.</Button>
         </Buttons>
     </Container>
-    )
-  }
-  
-  const Container = styled.div`
-    background-color: #D9D2D8;
+    
+  )
+}
+
+const Container = styled.div`
+  background-color: #D9D2D8;
     position: absolute;
     width:118.9375rem;
     height: 90rem;
     font-family: "The-Jams";
     font-weight: 500;
-  `;
-
-    const QuizNum = styled.div`
+`;
+const QuizNum = styled.div`
     text-align: center;
     padding-top: 5.625rem;
     font-size: 2.25rem;
@@ -44,7 +42,7 @@ function Quiz4({onAnswer}) {
     `;
 
     const Buttons = styled.div`
-    margin-top: 15rem;
+    margin-top: 28rem;
     position: absolute;
     transform: translateX(-50%);
     left: 50%;
@@ -68,4 +66,4 @@ function Quiz4({onAnswer}) {
     `;
 
 
-  export default Quiz4;
+export default Quiz4_2;
