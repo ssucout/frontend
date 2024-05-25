@@ -6,7 +6,6 @@ import MainPage from './components/MainPage.jsx'
 import QuizMainPage from './components/Quiz/QuizMainPage.jsx';
 import FacePage from './components/FaceMainPage.jsx';
 import ClubListPage from './components/ClubListPage.js';
-
 import ResultPage from './components/ResultPage.js';
 import ResultPage2 from './components/ResultPage2.js';
 
@@ -23,7 +22,6 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<MainPage />} />
-
           <Route path="/quiz" element={<QuizMainPage />}/>
           <Route path="/face" element={<FacePage />}/>
           <Route path="/quiz/*" element={<QuizNavigator />} />          
