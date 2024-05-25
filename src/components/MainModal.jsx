@@ -48,12 +48,14 @@ const Box = styled.div`
   height: 38.8125rem;
   background-color: white;
   border-radius: 2.5rem;
+
   position: absolute;
   top: 40.5625rem;
   transform: translate(-50%, -50%);
   display: flex;
   left: 50%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 `;
 
 const ModalText = styled.div`
