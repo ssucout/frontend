@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function Quiz3({onAnswer}) {
+function Quiz3() {
     const navigate = useNavigate();
     return (
         <Container>
