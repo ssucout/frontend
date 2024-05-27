@@ -27,7 +27,7 @@ function MainPage() {
               <MainModal isOpen={isModalOpen} closeModal={closeModal} />
             <Buttons onClick={goClubListPage}>동아리 리뷰 살펴보기</Buttons>
             <ButtonGap />    
-            <Buttons>동아리방 둘러보기</Buttons>
+            <Buttons onClick={() => navigate('/map')}>동아리방 둘러보기</Buttons>
         </ButtonContainer>
       </BackGround>
     );
