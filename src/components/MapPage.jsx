@@ -24,7 +24,7 @@ function MapPage() {
 }
 
 const Container = styled.div`
-  background-color: #FFF7E3;
+  background-color: #D9D2D8;
   width: 64rem;
   height: 100%;
   position: absolute;
