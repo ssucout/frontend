@@ -26,7 +26,7 @@ function MapPage() {
 const Container = styled.div`
   background-color: #D9D2D8;
   width: 64rem;
-  height: 100%;
+  min-height: 100vh;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -71,10 +71,12 @@ const Button = styled.p`
 const ImageBox = styled.div`
   background-color: white;
   width: 64rem;
+  height: 51.7331rem;
 `;
 
 const MapImage = styled.img`
-  
+  width: 64rem;
+  object-fit:cover
 `;
 
 export default MapPage
