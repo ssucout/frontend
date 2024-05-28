@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import ResultVol1Img from '../../img/ResultVol1.png';
+import { useNavigate } from 'react-router-dom';
 
 function ResultVol1() {
+  const navigate = useNavigate();
   return (
     <Container>
       <SmallText>나에게 찰떡인 동아리는 뭘까?</SmallText>
@@ -10,7 +12,7 @@ function ResultVol1() {
           <Box>
             <ResultImage src={ResultVol1Img}></ResultImage>
           </Box>
-          <Button>위 동아리 리뷰 보러가기</Button>
+          <Button onClick={() => navigate('/clubs')}>위 동아리 리뷰 보러가기</Button>
     </Container>
   )
 }

@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import ResultMu1Img from '../../img/ResultMu1.png';
+import { useNavigate } from 'react-router-dom';
 
 function ResultMu1() {
+  const navigate = useNavigate();
   return (
     <Container>
       <SmallText>나에게 찰떡인 동아리는 뭘까?</SmallText>
         <MainText>SSU:Cout가 추천하는 동아리는</MainText>
         <ResultImage src={ResultMu1Img}></ResultImage>
-        <Button>위 동아리 리뷰 보러가기</Button>
+        <Button onClick={() => navigate('/clubs')}>위 동아리 리뷰 보러가기</Button>
     </Container>
   )
 }

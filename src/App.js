@@ -4,7 +4,8 @@ import './App.css';
 import './index.css'
 import MainPage from './components/MainPage.jsx'
 import QuizMainPage from './components/Quiz/QuizMainPage.jsx';
-import FacePage from './components/FaceMainPage.jsx';
+import FaceMainPage from './components/FaceMainPage.jsx';
+import FaceResultPage from './components/FaceResultPage.jsx';
 import ClubListPage from './components/ClubListPage.js';
 import ResultPage from './components/ResultPage.js';
 import ResultPage2 from './components/ResultPage2.js';
@@ -24,7 +25,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/quiz" element={<QuizMainPage />}/>
-          <Route path="/face" element={<FacePage />}/>
+          <Route path="/face" element={<FaceMainPage />}/>
+          <Route path="/face/result" element={<FaceResultPage />}/>
           <Route path="/map" element={<MapPage />}/>
           <Route path="/quiz/*" element={<QuizNavigator />} />          
           <Route path="/quiz/result/*" element={<ResultNavigator />} />           

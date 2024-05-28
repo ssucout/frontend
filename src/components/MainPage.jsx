@@ -34,8 +34,33 @@ function MainPage() {
   
 }
 
+const BackGround = styled.div`
+  text-align: center;
+  background-color:#dcd2da;	
+  width:64rem;
+  height:100%;
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const WelcomeText = styled.div`
+  color:#595959;
+  width:52.0625rem;
+  height:2.1875rem;
+  position:absolute;
+  margin-top: 8rem;
+  text-align: center;
+  font-size:2rem;
+  letter-spacing:0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family : "Pretendard-Bold";
+  font-weight: bolder;
+`;
+
 const ButtonContainer = styled.div`
-  padding-top : 30rem;
+  padding-top : 24rem;
 `;
 
 const ButtonGap = styled.div`
@@ -47,12 +72,12 @@ const SSUCoutShadow = styled.div`
 	width:50rem;
 	height:10.6303rem;
 	position: absolute;
-	text-align:center;
+	/* text-align:center; */
 	font-family: "Inter-Black_Italic";
 	font-size:9.375rem;
 	font-weight: 900px;
 	letter-spacing:0;
-  top : 19.2rem;
+  top : 15rem;
   left: 50%;
   transform: translate(-50%, -50%);
 	-webkit-text-stroke: #6B6B6B .1875rem;
@@ -67,28 +92,13 @@ const SSUCoutWhite = styled.div`
 	font-size:9.375rem;
 	font-family: "Inter-Black_Italic";
 	letter-spacing:0;
-  top : 20rem;
+  top : 15.8rem;
   left: 50%;
 	font-weight: 900px;
   transform: translate(-50%, -50%);
 	-webkit-text-stroke: #6B6B6B .1875rem;
 `;
 
-const WelcomeText = styled.div`
-  color:#595959;
-	width:52.0625rem;
-	height:2.1875rem;
-	position:absolute;
-	top: 10rem;
-	font-family:Inter;
-	text-align: center;
-	font-size:2rem;
-	letter-spacing:0;
-  left: 50%;
-  transform: translateX(-50%);
-	font-family : "Pretendard";
-  font-weight: bolder;
-`;
 
 const Buttons = styled.button`
   width: 48rem;
@@ -103,12 +113,5 @@ const Buttons = styled.button`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
 `;
 
-const BackGround = styled.div`
-  text-align: center;
-	background-color:#dcd2da;	
-	width:118.9375rem;
-	height:90rem;
-	position:absolute;
-`;
 
 export default MainPage;
