@@ -11,7 +11,6 @@ function Quiz4_6({onAnswer}) {
         <QuizSentence>채플 출석을 다 채운 후 나는</QuizSentence>
         <Buttons>
         <Button onClick={() => navigate('/quiz/result/ch')}>아 8번 다 채웠네 이제 안가도 되겠지 ~?</Button>
-        <ButtonGap />
         <Button onClick={() => navigate('/quiz/result/ch')}>그래도 채플시간이니까 가서 예배드려야겠다!!</Button>
         </Buttons>
     </Background>
@@ -19,34 +18,38 @@ function Quiz4_6({onAnswer}) {
 }
 
 const Background = styled.div`
-    background-color: #D9D2D8;
-    position: absolute;
-    width:118.9375rem;
-    height: 90rem;
-    font-family: "The-Jams";
-    font-weight: 500;
+background-color: #D9D2D8;
+width:100vw;
+height: 100vh;
+font-family: "The-Jams";
+font-weight: 500;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 `;
 
 const QuizNum = styled.div`
-    text-align: center;
-    padding-top: 4.375rem;
-    font-size: 2.25rem;
-    font-weight: 600;
-    color: #4F4F4F;
+text-align: center;
+font-size: 2.25rem;
+font-weight: 600;
+color: #4F4F4F;
 `;
 
 const QuizSentence = styled.div`
-    text-align: center;
-    padding-top: 18.75rem;
-    font-size: 4.5rem;
-    color: #656161;
+text-align: center;
+font-size: 4.5rem;
+color: #656161;
+margin-top: 12.5rem;
 `;
 
 const Buttons = styled.div`
-    margin-top: 30rem;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 4rem;
+margin-top: 20rem;
 `;
 
 const Button = styled.button`
