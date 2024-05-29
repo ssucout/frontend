@@ -25,7 +25,7 @@ function MapPage() {
 
 const Container = styled.div`
   background-color: #D9D2D8;
-  width: 64rem;
+  width: 100vw;
   min-height: 100vh;
   position: absolute;
   display: flex;
@@ -52,7 +52,7 @@ const MainText = styled.div`
 
 const FloorBanner = styled.div`
   background-color: #D9D9D9;
-  width: 64rem;
+  width: 100vw;
   height: 6rem;
   margin-top: 3rem;
   display: flex; /* 플렉스 컨테이너로 설정 */
@@ -70,12 +70,12 @@ const Button = styled.p`
 
 const ImageBox = styled.div`
   background-color: white;
-  width: 64rem;
+  width: 100vw;
   height: 51.7331rem;
 `;
 
 const MapImage = styled.img`
-  width: 64rem;
+  width: 100vw;
   object-fit:cover
 `;
 

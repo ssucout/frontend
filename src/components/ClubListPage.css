@@ -86,8 +86,8 @@
 
 .background { 
 	background-color:rgba(80.745849609375, 27.29115016758442, 65.77853634953499, 0.20000000298023224);
-	width:118.9375rem;
-	height:90rem;
+	width:100vw;
+	height:100vh;
 	position:absolute;
 	text-align: center;
 	display: flex;
@@ -97,7 +97,7 @@
 }
 .background_white { 
 	background-color:rgba(255, 255, 255, 1);
-	width:118.9375rem;
+	width:100vw;
 	height:68.75rem;
 	position:absolute;
 	left:0rem;

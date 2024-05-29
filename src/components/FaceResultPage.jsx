@@ -17,7 +17,7 @@ function FaceResultPage() {
 
 const Container = styled.div`
     background-color:#dcd2da;	
-    width: 64rem;
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

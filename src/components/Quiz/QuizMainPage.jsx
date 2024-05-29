@@ -18,9 +18,12 @@ function QuizMainPage(){
 const Container = styled.div`
   background-color: #D9D2D8;
     position: absolute;
-    /* width: 64rem;   */
-    width:118.9375rem;
-    height: 90rem;
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 const SmallText = styled.div`
@@ -43,27 +46,21 @@ const MainText = styled.div`
 `;
 
 const Image = styled.img`
-    width: 53.125rem;
-    height: 49.375rem;
-    position: relative ;
+    width: 45rem;
+    height: 40rem;
     margin: 0 auto;
-    margin-left : 27.5%;
 `;
 
 const StartButton = styled.button`
   background-color: #4F4F4F;
-  position: relative;
-  left: 50%;
   width: 50rem;
     height: 9.375rem;
-  /* left: 50%; */
-  bottom: -5%;
-  transform: translateX(-50%); 
   border-radius: 3.125rem;
   font-size: 3.125rem;
     font-weight: 700;
   font-family: "Pretendatd-Bold";
   color: white;
+  margin-top: 2rem;
 `;
 
 export default QuizMainPage

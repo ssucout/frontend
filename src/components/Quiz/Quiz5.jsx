@@ -11,7 +11,6 @@ function Quiz5({onAnswer}) {
         <QuizSentence>나는 클래식 음악을 들으면</QuizSentence>
         <Buttons>
         <Button onClick={() => navigate('/quiz/result/mu1')}>힐링된다</Button>
-        <ButtonGap />
         <Button onClick={() => navigate('/quiz/result/mu2')}>졸리다</Button>
         </Buttons>
     </Container>
@@ -20,33 +19,37 @@ function Quiz5({onAnswer}) {
 }
 
 const Container = styled.div`
-  background-color: #D9D2D8;
-    position: absolute;
-    width:118.9375rem;
-    height: 90rem;
+    background-color: #D9D2D8;
+    width:100vw;
+    height: 100vh;
     font-family: "The-Jams";
     font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
+
 const QuizNum = styled.div`
-    text-align: center;
-    padding-top: 5.625rem;
     font-size: 2.25rem;
     font-weight: 600;
     color: #4F4F4F;
-    `;
-    const QuizSentence = styled.div`
+`;
+
+const QuizSentence = styled.div`
     text-align: center;
-    padding-top: 15rem;
     font-size: 4.5rem;
     color: #656161;
-    `;
+    margin-top: 12rem;
+`;
 
-    const Buttons = styled.div`
-    margin-top: 28rem;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    `;
+const Buttons = styled.div`
+  margin-top: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem; /* 간격 설정 */
+`;
 
     const Button = styled.button`
     color: #818181;
@@ -60,10 +63,5 @@ const QuizNum = styled.div`
     text-align: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     `;
-
-    const ButtonGap = styled.div`
-    margin-top: 4.1875rem;
-    `;
-
 
 export default Quiz5;

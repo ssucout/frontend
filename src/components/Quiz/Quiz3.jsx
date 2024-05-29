@@ -31,17 +31,18 @@ function Quiz3() {
   
   const Container = styled.div`
     background-color: #D9D2D8;
-    position: absolute;
-    /* width: 64rem;   */
-    width:118.9375rem;
-    height: 90rem;
+    width:100vw;
+    height: 100vh;
     font-family: "The-Jams";
     font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   `;
 
     const QuizNum = styled.div`
     text-align: center;
-    padding-top: 5.625rem;
     font-size: 2.25rem;
     font-weight: 600;
     color: #4F4F4F;
@@ -49,16 +50,13 @@ function Quiz3() {
 
 const QuizSentence = styled.div`
     text-align: center;
-    padding-top: 5.625rem;
     font-size: 4.5rem;
     color: #656161;
+    margin-top: 2rem;
 `;
 
   const Buttons = styled.div`
-    margin-top: 5.625rem;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
+    margin-top: 3rem;
   `;
 
   const ButtonRow = styled.div`

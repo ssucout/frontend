@@ -36,8 +36,8 @@ function ClubInfoPage() {
 const Background = styled.div`
     text-align: center;
     background-color:rgba(255, 255, 255, 1);
-	width:118.9375rem;
-	height:90rem;
+	width:100vw;
+	height:100vh;
 `;
 
 const SmallText = styled.div`

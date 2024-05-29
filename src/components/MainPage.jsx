@@ -37,7 +37,7 @@ function MainPage() {
 const BackGround = styled.div`
   text-align: center;
   background-color:#dcd2da;	
-  width:64rem;
+  width:100vw;
   height:100%;
   position:absolute;
   display: flex;
