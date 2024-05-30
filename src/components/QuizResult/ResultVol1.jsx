@@ -8,6 +8,7 @@ function ResultVol1() {
   return (
     <Container>
       <SmallText>나에게 찰떡인 동아리는 뭘까?</SmallText>
+      <MainText>SSU:Cout가 추천하는 동아리는</MainText>
             <ResultImage src={ResultVol1Img}></ResultImage>
           <Button onClick={() => navigate('/clubs')}>위 동아리 리뷰 보러가기</Button>
     </Container>

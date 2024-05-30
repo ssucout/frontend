@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import upload_img from '../img/upload_Img.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import FaceResultPage from './FaceResultPage';
 
 function FaceMainPage() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -27,8 +28,9 @@ function FaceMainPage() {
         }
       });
       console.log('파일 업로드 성공:', response.data);
+      <FaceResultPage data={response.data} />
       // 서버 응답에 따라 결과 페이지로 이동
-      navigate('/face/result');
+      navigate('/face/result', {state : response.data});
     } catch (error) {
       console.error('파일 업로드 실패:', error);
       alert('파일 업로드에 실패했습니다.');
