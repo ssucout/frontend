@@ -10,7 +10,7 @@ function FaceResultPage() {
         <SmallText>내가 왕이 될 상인가...</SmallText>
         <MainText>SSU:Cout가 추천하는 동아리는</MainText>
         <ResultImg src={image}></ResultImg>
-        <Button onClick={() => navigate('/clubs')}>위 동아리 리뷰 보러 가기</Button>
+        <Button onClick={() => navigate('/clubs')}>동아리 리뷰 보러 가기</Button>
     </Container>
   )
 }
