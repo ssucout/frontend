@@ -1,16 +1,21 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
-import image from '../img/Map1F.jpeg'
 
-function FaceResultPage() {
+function FaceResultPage(props) {
     const navigate = useNavigate();
+    const location = useLocation();
+    const data = location.state || {};
   return (
     <Container>
         <SmallText>내가 왕이 될 상인가...</SmallText>
         <MainText>SSU:Cout가 추천하는 동아리는</MainText>
-        <ResultImg src={image}></ResultImg>
-        <Button onClick={() => navigate('/clubs')}>위 동아리 리뷰 보러 가기</Button>
+        <ResultBox>
+          <ResultClubName>{data.clubName}</ResultClubName>
+          <ResultClubInfo>{data.clubInfo}</ResultClubInfo>
+          <Text>🤍결과는 재미로만 참고해주세요🤍</Text>
+        </ResultBox>
+        <Button onClick={() => navigate('/clubs')}>동아리 리뷰 보러 가기</Button>
     </Container>
   )
 }
@@ -39,15 +44,56 @@ const MainText = styled.p`
     font-weight: bolder;
     -webkit-text-stroke: #4F4F4F .100rem;
     margin-top: 0;
+    margin-bottom: 2rem;
 `;
 
-const ResultImg = styled.img`
+const ResultBox = styled.div`
+    background-color: white;
     width: 40rem;
     height: 40rem;
     display: flex;
-    /* margin-top: 1.75rem; */
-    padding-bottom: 3.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
+
+const ResultClubName = styled.div`
+  font-size: 4rem;
+  font-family: "Pretendard-Bold";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  
+`;
+
+const ResultClubInfo = styled.div`
+  font-family: "Pretendard-Bold";
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  font-size: 1.5rem;
+  color: #4F4F4F;
+`;
+
+const Text = styled.div`
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pretendard-Bold";
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #818181;
+  font-size: 1.5rem;
+`;
+
 
 const Button = styled.button`
 background-color: #4F4F4F;

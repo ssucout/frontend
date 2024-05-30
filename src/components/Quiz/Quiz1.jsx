@@ -1,23 +1,25 @@
 import React from 'react'
+// import './Quiz1.css';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Quiz1({onAnswer}) {
+function Quiz1() {
   const navigate = useNavigate();
 
   return (
-    <Background>
+    <Container>
         <QuizNum>1 / 10</QuizNum>
         <QuizSentence>새터에 간 당신, <br /> 옆 자리에 앉은 사람에게</QuizSentence>
         <Buttons>
         <Button onClick={() => navigate('/quiz/quiz2')}>앗 모르는 사람.... 먼저 말을 걸 때까지 기다린다</Button>
         <Button onClick={() => navigate('/quiz/quiz2')}>처음 만나는 동기...!! 먼저 인사를 건네본다</Button>
         </Buttons>
-    </Background>
+    </Container>
+    
   )
 }
 
-const Background = styled.div`
+const Container = styled.div`
     background-color: #D9D2D8;
     width:100vw;
     height: 100vh;
@@ -50,7 +52,7 @@ const Buttons = styled.div`
   gap: 1rem; /* 간격 설정 */
 `;
 
-const Button = styled.button`
+const Button = styled.div`
   color: rgb(255, 255, 255);
   background-color: #4F4F4F;
   width: 50rem;
