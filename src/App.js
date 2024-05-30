@@ -6,7 +6,7 @@ import MainPage from './components/MainPage.jsx'
 import QuizMainPage from './components/Quiz/QuizMainPage.jsx';
 import FaceMainPage from './components/FaceMainPage.jsx';
 import FaceResultPage from './components/FaceResultPage.jsx';
-import ClubListPage from './components/ClubListPage.js';
+import ClubListPage from './components/ClubListPage.jsx';
 import ResultPage from './components/ResultPage.js';
 import ResultPage2 from './components/ResultPage2.js';
 import MapPage from './components/MapPage.jsx'

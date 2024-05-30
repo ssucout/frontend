@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 
 function MakeReview() {
     const { state } = useLocation();
-    const club = state && state.club;
+    //const club = state && state.club;
+    const club = state?.club;
 
     const [review, setReview] = useState('');
     const [rating, setRating] = useState(0);
@@ -29,8 +30,8 @@ function MakeReview() {
             <h2>동아리 리뷰 작성</h2>
             {club && (
                 <ClubInfo>
-                    <h3>{club.name}</h3>
-                    <p>카테고리: {club.category}</p>
+                    <h3>{club.clubName}</h3>
+                    <p>카테고리: {club.clubCategory}</p>
                     {/* 동아리에 대한 추가 정보 표시 */}
                 </ClubInfo>
             )}
@@ -57,7 +58,7 @@ function MakeReview() {
 }
 
 const Container = styled.div`
-    max-width: 600px;
+    max-width: 37.5rem;
     margin: 0 auto;
     padding: 20px;
 `;
