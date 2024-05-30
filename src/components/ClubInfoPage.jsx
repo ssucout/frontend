@@ -120,7 +120,9 @@ function ClubInfoPage() {
 }
 
 const Container = styled.div`
-    overflow: hidden;
+    width: 100vw;
+    height: 25vh;   
+    
     position: relative;
     width: 1024px;
     height: 1440px;
@@ -174,7 +176,7 @@ const HeaderText = styled.span`
     color: rgba(255, 255, 255, 1);
     font-family: Inter;
     font-size: 24px;
-    cursor: pointer;
+    
 `;
 
 const Separator = styled.div`
@@ -219,14 +221,15 @@ const ReviewDetail = styled.div`
 const ReviewButton = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color:rgba(81.00000277161598, 27.000000290572643, 66.00000366568565, 0.20000000298023224);
-    width: 200px;
-    height: 50px;
+    width: 300px;
+    height: 70px;
     border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin: 20px auto;
+    margin: 1.25rem auto;
+    
 `;
 
 const ReviewButtonText = styled.span`
@@ -262,7 +265,7 @@ const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    cursor: pointer;
 `;
 
 const ModalOption = styled.button`
@@ -275,6 +278,7 @@ const ModalOption = styled.button`
     &:hover {
         text-decoration: underline;
     }
+    
 `;
 
 const ModalClose = styled.button`

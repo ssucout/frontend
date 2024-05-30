@@ -1,111 +1,14 @@
-// import React, { useState } from 'react';
-// import styled from 'styled-components';
-// import { useLocation } from 'react-router-dom';
-
-// function MakeReview() {
-//     const { state } = useLocation();
-//     //const club = state && state.club;
-//     const club = state?.club;
-
-//     const [review, setReview] = useState('');
-//     const [rating, setRating] = useState(0);
-
-//     const handleReviewChange = (e) => {
-//         setReview(e.target.value);
-//     }
-
-//     const handleRatingChange = (e) => {
-//         setRating(parseInt(e.target.value));
-//     }
-
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//         // 여기서 리뷰와 별점을 서버로 보내는 작업을 수행합니다.
-//         console.log('리뷰:', review);
-//         console.log('별점:', rating);
-//     }
-
-//     return (
-//         <Container>
-//             <h2>동아리 리뷰 작성</h2>
-//             {club && (
-//                 <ClubInfo>
-//                     <h3>{club.clubName}</h3>
-//                     <p>카테고리: {club.clubCategory}</p>
-//                     {/* 동아리에 대한 추가 정보 표시 */}
-//                 </ClubInfo>
-//             )}
-//             <Form onSubmit={handleSubmit}>
-//                 <Label>
-//                     리뷰:
-//                     <TextArea value={review} onChange={handleReviewChange} />
-//                 </Label>
-//                 <Label>
-//                     별점:
-//                     <select value={rating} onChange={handleRatingChange}>
-//                         <option value={0}>별점 선택</option>
-//                         <option value={1}>⭐</option>
-//                         <option value={2}>⭐⭐</option>
-//                         <option value={3}>⭐⭐⭐</option>
-//                         <option value={4}>⭐⭐⭐⭐</option>
-//                         <option value={5}>⭐⭐⭐⭐⭐</option>
-//                     </select>
-//                 </Label>
-//                 <Button type="submit">리뷰 등록</Button>
-//             </Form>
-//         </Container>
-//     );
-// }
-
-// const Container = styled.div`
-//     max-width: 37.5rem;
-//     margin: 0 auto;
-//     padding: 20px;
-// `;
-
-// const ClubInfo = styled.div`
-//     margin-bottom: 20px;
-//     border-bottom: 1px solid #ccc;
-//     padding-bottom: 10px;
-// `;
-
-// const Form = styled.form`
-//     display: flex;
-//     flex-direction: column;
-// `;
-
-// const Label = styled.label`
-//     margin-bottom: 10px;
-// `;
-
-// const TextArea = styled.textarea`
-//     width: 100%;
-//     height: 100px;
-//     resize: none;
-// `;
-
-// const Button = styled.button`
-//     width: 150px;
-//     padding: 10px;
-//     margin-top: 20px;
-//     background-color: #007bff;
-//     color: #fff;
-//     border: none;
-//     border-radius: 5px;
-//     cursor: pointer;
-// `;
-
-// export default MakeReview;
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function MakeReview() {
     const { state } = useLocation();
     const club = state?.club;
+    const navigate = useNavigate();
 
-    const [review, setReview] = useState('');
+    const [review, setReview] = useState("");
     const [rating, setRating] = useState(0);
     const [activityPeriod, setActivityPeriod] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -126,19 +29,29 @@ function MakeReview() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // 서버로 데이터를 전송합니다.
-        const data = {
-            clubId: club.clubId,
-            reviewContent: review,
-            userStar: rating,
-            userYear: activityPeriod,
-        };
+        const activityYear = parseInt(activityPeriod.split(' ')[0]);
 
-        axios.post('http://localhost:8080/review', data)
+        const data = {
+            content: review,
+            userStar: rating,
+            userYear: activityYear,
+        };
+        console.log('데이터 전송: ', data);
+
+        axios.post(`http://localhost:8080/review/${club.clubId}/write`, data, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
             .then(response => {
                 console.log('리뷰가 성공적으로 등록되었습니다:', response.data);
+                alert('등록되었습니다!');
+                navigate(`/clubs/${club.clubId}`, { state: { club } });
             })
             .catch(error => {
+                console.log('리뷰 내용 ', review);
+                console.log('리뷰 별점 ', rating);
+                console.log('리뷰 활동시기 ', activityPeriod);
                 console.error('리뷰 등록에 실패했습니다:', error);
             });
     };
@@ -161,8 +74,9 @@ function MakeReview() {
 
     return (
         <Container>
-            <ClubCategory>{club?.clubCategory}</ClubCategory>
-            <ClubName>{club?.clubName}</ClubName>
+            <ClubName>
+                <ClubCategory>{club?.clubCategory} 분과</ClubCategory>{club?.clubName}
+            </ClubName>
             <StarRating>{renderStars()}</StarRating>
             <Form onSubmit={handleSubmit}>
                 <TextArea
@@ -172,11 +86,11 @@ function MakeReview() {
                 />
                 <Label>
                     언제 활동했나요?
-                    <SelectButton onClick={() => setIsModalOpen(true)}>
+                    <SelectButton type= "button" onClick={() => setIsModalOpen(true)}>
                         {activityPeriod || '활동 시기 선택'}
                     </SelectButton>
                 </Label>
-                <Note>* 허위로 후기를 작성할 경우 학고 생활이 어려워질 수 있습니다</Note>
+                <Note>* 허위로 후기를 작성할 경우 학교 생활이 어려워질 수 있습니다</Note>
                 <Note>* 수정 및 삭제가 불가능하므로 신중히 작성해주세요</Note>
                 <SubmitButton type="submit">후기 등록하기</SubmitButton>
             </Form>
@@ -198,29 +112,30 @@ function MakeReview() {
 
 const Container = styled.div`
     background-color: rgba(255, 255, 255, 1);
-    width: 1024px;
-    height: 1440px;
+    width: 64rem;
+    height: 90rem;
     position: relative;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.25rem;
 `;
 
 const ClubCategory = styled.div`
     font-family: Inter;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: rgba(128, 128, 128, 1);
     text-align: left;
 `;
 
 const ClubName = styled.h2`
     font-family: Inter;
-    font-size: 50px;
+    font-size: 3.125rem;
     color: rgba(55, 55, 55, 1);
-    text-align: left;
+    text-align: center;
 `;
 
 const StarRating = styled.div`
-    font-size: 50px;
+    font-size: 3.125rem;
+    text-align: center;
     color: rgba(255, 229, 164, 1);
 `;
 
@@ -232,57 +147,63 @@ const Star = styled.span`
 const Form = styled.form`
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 `;
 
 const TextArea = styled.textarea`
-    width: 890px;
-    height: 450px;
+    width: 55.625rem;
+    height: 31.25rem;
     resize: none;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
     border: 2px solid rgba(226, 226, 226, 1);
-    font-size: 20px;
+    font-size: 1.25rem;
 `;
 
 const Label = styled.label`
     font-family: Inter;
-    font-size: 30px;
+    font-size: 1.875rem;
     color: rgba(154, 154, 154, 1);
     text-align: left;
-    margin-top: 40px;
+    margin-top: 2.5rem;
 `;
 
 const SelectButton = styled.button`
+    box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    width: 13.75rem;
+    height: 4.375rem;
+    background-color: rgba(81, 27, 66, 0.2);
+    border-radius: 4.375rem;
+    color: rgba(255, 255, 255, 1);
     font-family: Inter;
-    font-size: 30px;
-    color: rgba(154, 154, 154, 1);
-    text-align: left;
+    font-size: 1.875rem;
     border: none;
-    background: none;
     cursor: pointer;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
 `;
 
 const Note = styled.p`
     font-family: Inter;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: rgba(154, 154, 154, 1);
     text-align: left;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 `;
 
 const SubmitButton = styled.button`
-    width: 400px;
-    height: 77px;
+    box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    width: 25rem;
+    height: 4.8175rem;
     background-color: rgba(81, 27, 66, 0.2);
-    border-radius: 70px;
+    border-radius: 4.375rem;
     color: rgba(255, 255, 255, 1);
     font-family: Inter;
-    font-size: 40px;
+    font-size: 2.5rem;
     border: none;
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     align-self: center;
 `;
 
@@ -300,8 +221,8 @@ const Modal = styled.div`
 
 const ModalContent = styled.div`
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,8 +232,8 @@ const ModalOption = styled.button`
     background: none;
     border: none;
     color: black;
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 1.125rem;
+    margin: 0.625rem 0;
     cursor: pointer;
     &:hover {
         text-decoration: underline;
@@ -323,8 +244,8 @@ const ModalClose = styled.button`
     background: none;
     border: none;
     color: red;
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 1.125rem;
+    margin-top: 1.25rem;
     cursor: pointer;
 `;
 
