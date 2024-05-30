@@ -31,8 +31,8 @@ function App() {
           <Route path="/quiz/*" element={<QuizNavigator />} />          
           <Route path="/quiz/result/*" element={<ResultNavigator />} />           
           <Route path="/clubs" element={<ClubListPage />} />         
-          <Route path="/clubs/*" element={<ClubInfoPage/>}/>
-          <Route path="/clubs/*/review" element={<MakeReview/>}/>
+          <Route path="/clubs/:clubId" element={<ClubInfoPage/>}/>
+          <Route path="/clubs/:clubId/review" element={<MakeReview/>}/>
         </Routes>
       </div>
     </BrowserRouter>
