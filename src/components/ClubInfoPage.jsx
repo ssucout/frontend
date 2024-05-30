@@ -167,13 +167,14 @@ const Header = styled.div`
     align-items: center;
     margin-bottom: 20px;
     left : 85%;
+    cursor: pointer;
 `;
 
 const HeaderText = styled.span`
     color: rgba(255, 255, 255, 1);
     font-family: Inter;
     font-size: 24px;
-    
+    cursor: pointer;
 `;
 
 const Separator = styled.div`
@@ -251,6 +252,7 @@ const Modal = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
 `;
 
 const ModalContent = styled.div`
@@ -260,6 +262,7 @@ const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 `;
 
 const ModalOption = styled.button`
