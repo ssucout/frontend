@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import ListButton from '../img/ListButton.png'
 import axios from 'axios';
 
 function ClubListPage() {
@@ -46,10 +47,10 @@ function ClubListPage() {
                 sortedClubs.sort((a, b) => a.clubName.localeCompare(b.clubName));
                 break;
             case 'highest':
-                sortedClubs.sort((a, b) => b.averageRating - a.averageRating);
+                sortedClubs.sort((a, b) => b.totalStar - a.totalStar);
                 break;
             case 'lowest':
-                sortedClubs.sort((a, b) => a.averageRating - b.averageRating);
+                sortedClubs.sort((a, b) => a.totalStar - b.totalStar);
                 break;
             default:
                 break;
@@ -80,7 +81,7 @@ function ClubListPage() {
                     placeholder="동아리 명을 입력하세요"
                     onChange={(term) => { setSearchTerm(term.target.value); }}
                 />
-                <SearchImage onClick={() => setIsModalOpen(true)}></SearchImage>
+                <SearchImage src={ListButton} onClick={() => setIsModalOpen(true)}></SearchImage>
             <ClubList>
                 {clubs.map(club => (
                     <ClubItem key={club.clubId} onClick={() => navigate(`/clubs/${club.clubId}`, { state: { club: club } })}>
@@ -107,7 +108,7 @@ function ClubListPage() {
 const Background = styled.div`
     background-color: rgba(80.75, 27.29, 65.78, 0.2);
     width: 100vw;
-    height: 25vh;   
+    height: 20vh;;   
     position: relative;
     text-align: center;
     display: flex;
@@ -136,14 +137,15 @@ const SearchBox = styled.input`
     line-height: 100;
 `;
 
-const SearchImage = styled.div`
-    background-image: url('../img/ListButton.png');
-    width: 10.25rem;
-    height: 1.25rem;
+const SearchImage = styled.img`
+    /* background-image: url('../img/ListButton.png'); */
+    width: 5.25rem;
+    height: 5.25rem;
     position:absolute;
     top: 5rem;
     cursor: pointer;
-    margin-left: 1rem;
+    margin-left: -80%;
+    top:10rem;
     z-index: 1;  
     position: relative;
 `;
