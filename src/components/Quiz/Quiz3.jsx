@@ -13,7 +13,7 @@ function Quiz3() {
       <Buttons>
         <ButtonRow>
           <Button onClick={() => navigate('/quiz/quiz4_3')}>
-            <ButtonText>나는 다양한<br />봉사활동에 참여하여<br />사회에 도움이 되고 싶다</ButtonText>
+            <ButtonText>나는 다양한<br />봉사활동에 참여하여<br />사회에 <br /> 도움이 되고 싶다</ButtonText>
           </Button>
           <Button onClick={() => navigate('/quiz/quiz4_1')}>
             <ButtonText>나는 무언가를<br />열심히 연습해서<br />무대에 서보고 싶다</ButtonText>
@@ -24,7 +24,7 @@ function Quiz3() {
             <ButtonText>그동안 못 봤던<br />영화나<br />전시회 도장깨기를 한다</ButtonText>
           </Button>
           <Button onClick={() => navigate('/quiz/quiz4_5')}>
-            <ButtonText>종강이 뭐죠..<br />다시 도서관에 가서<br />미래를 위한 공부를 한다</ButtonText>
+            <ButtonText>종강이 뭐죠..<br />다시 도서관에 가서<br />미래를 위한 <br />공부를 한다</ButtonText>
           </Button>
         </ButtonRow>
         <ButtonRow>
@@ -52,43 +52,49 @@ const Container = styled.div`
   justify-content: center;
   padding: 1rem;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     padding: 2rem;
   }
 `;
 
 const QuizNum = styled.div`
   text-align: center;
-  font-size: 2.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #4F4F4F;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 1.25rem;
+  @media (min-width: 1200px) {
+    /* margin-top: 3rem; */
+    font-size: 2rem;
   }
 `;
 
 const QuizSentence = styled.div`
   text-align: center;
-  font-size: 4.5rem;
+  font-size: 2rem;
   color: #656161;
-  margin-top: 2rem;
+  margin-top: 3rem;
 
-  @media (max-width: 768px) {
-    font-size: 3rem;
+  @media (min-width: 768px) {
+    margin-top: 5rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 2rem;
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
   }
 `;
 
 const Buttons = styled.div`
   margin-top: 3rem;
+
+  @media (min-width: 768px){
+    margin-top: 5rem;
+  }
+
 `;
 
 const ButtonRow = styled.div`
@@ -96,23 +102,20 @@ const ButtonRow = styled.div`
   gap: 1rem;
   margin-bottom: 1rem;
   justify-content: center;
+  flex-direction: row;
 
-  @media (max-width: 768px) {
-    flex-direction: row;
-    gap: 1rem;
-  }
-  @media (max-width: 480px) {
-    flex-direction: row;
-    gap: 1rem;
+  @media (min-width: 1200px) {
+    gap: 1.5rem;
   }
 `;
 
 const Button = styled.button`
   background-color: white;
   color: #818181;
-  width: 26.6875rem;
-  height: 15.8125rem;
-  font-size: 2rem;
+  /* width: calc(100% - 0.5rem); */
+  width: 120%;
+  height: 8rem;
+  font-size: 1rem;
   font-family: "The-Jams";
   border-radius: 1.25rem;
   border-width: .3125rem;
@@ -122,19 +125,17 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   text-align: center;
+  /* width: calc(100% - 0.5rem); */
 
-  @media (max-width: 768px) {
-    width: calc(50% - 0.5rem);
-    height: auto;
+  @media (min-width: 768px) {
+    /* width: calc(50% - 0.5rem); */
+    height: 10rem;
     padding: 1rem;
-    font-size: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    width: calc(100% - 0.5rem);
-    height: auto;
-    padding: 0.5rem;
-    font-size: 1rem;
+  @media (min-width: 1200px) {
+    height: 12rem;
+    padding: 1.5rem;
   }
 `;
 
@@ -146,14 +147,12 @@ const ButtonText = styled.p`
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  margin: 0;
+  margin: 1.5rem;
+  font-size: 0.8rem;
+  /* white-space: pre-line; */
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 1.2rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
   }
 `;
 
