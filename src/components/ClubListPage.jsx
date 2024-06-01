@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import ListButton from '../img/ListButton.png'
 import axios from 'axios';
 
 function ClubListPage() {
@@ -80,7 +81,7 @@ function ClubListPage() {
                     placeholder="동아리 명을 입력하세요"
                     onChange={(term) => { setSearchTerm(term.target.value); }}
                 />
-                <SearchImage onClick={() => setIsModalOpen(true)}></SearchImage>
+                <SearchImage src={ListButton} onClick={() => setIsModalOpen(true)}></SearchImage>
             <ClubList>
                 {clubs.map(club => (
                     <ClubItem key={club.clubId} onClick={() => navigate(`/clubs/${club.clubId}`, { state: { club: club } })}>
@@ -107,7 +108,7 @@ function ClubListPage() {
 const Background = styled.div`
     background-color: rgba(80.75, 27.29, 65.78, 0.2);
     width: 100vw;
-    height: 25vh;   
+    height: 20vh;;   
     position: relative;
     text-align: center;
     display: flex;
@@ -136,8 +137,8 @@ const SearchBox = styled.input`
     line-height: 100;
 `;
 
-const SearchImage = styled.div`
-    background-image: url('../img/ListButton.png');
+const SearchImage = styled.img`
+    /* background-image: url('../img/ListButton.png'); */
     width: 10.25rem;
     height: 1.25rem;
     position:absolute;
