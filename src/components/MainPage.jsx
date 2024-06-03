@@ -135,7 +135,7 @@ const BackGround = styled.div`
 
 const WelcomeText = styled.div`
   color: #595959;
-  width: 90vw;
+  width: 100vw;
   height: 2.1875rem;
   position: relative;
   margin-top: 4rem;
@@ -190,7 +190,7 @@ const SSUCoutShadow = styled.div`
   font-size: 4rem;
   font-weight: 900;
   letter-spacing: 0;
-  top: 4rem;
+  top: 18%;
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-text-stroke: #6b6b6b 0.1875rem;
@@ -217,7 +217,7 @@ const SSUCoutWhite = styled.div`
   font-size: 4rem;
   font-family: "Inter-Black_Italic";
   letter-spacing: 0;
-  top: -1rem;
+  top: -12%;
   left: 50%;
   font-weight: 900;
   transform: translate(-50%, -50%);
