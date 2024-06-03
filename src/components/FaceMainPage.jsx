@@ -40,7 +40,7 @@ function FaceMainPage() {
   return (
     <Background>
       <SmallText>내가 왕이 될 상인가...</SmallText>
-      <MainText>내 관상과 어울리는 동아리는?</MainText>
+      <MainText>내 관상과 <br />어울리는 동아리는?</MainText>
       <UploadImg src={upload_img} />
       <InputBox type="file" onChange={handleFileChange} />
       <InfoText>*얼굴이 잘 나온 정면사진을 한 장만 업로드 해주세요</InfoText>
@@ -63,51 +63,110 @@ const Background = styled.div`
 const SmallText = styled.div`
   color: #595959;
   font-family: "Pretendard-Bold";
-  font-size: 2.25rem;
-  padding-top: 6rem;
+  font-size: 1rem;
+  padding-top: 2rem;
+
+  @media (min-width: 768px){
+    padding-top: 3rem;
+    font-size: 1.75rem;
+  }
+
+  @media (min-width: 1200px){
+    font-size: 2rem;
+  }
 `;
 
 const MainText = styled.div`
   color: white;
   font-family: "Pretendard-ExtraBold";
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: bolder;
-  -webkit-text-stroke: #4F4F4F .100rem;
-  padding-top: 1rem;
+  -webkit-text-stroke: #4F4F4F .075rem;
+  padding-top: 0.5rem;
+
+  @media (min-width: 768px){
+    padding-top: 1rem;
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1200px){
+    font-size: 4rem;
+    -webkit-text-stroke: #4F4F4F .1rem;
+  }
 `;
 
 const UploadImg = styled.img`
-  width: 40rem;
-  height: 40rem;
+  width: 20rem;
+  height: 20rem;
   display: flex;
   margin-top: 1.75rem;
+
+  @media (min-width: 768px){
+    width: 30rem;
+    height: 30rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 1200px){
+    width: 40rem;
+    height: 40rem;
+    margin-top: 3rem; 
+  }
 `;
 
 const InputBox = styled.input`
-  width: 40rem;
+  width: 20rem;
   border: none;
   background-color: white;
-  margin-top: 0%;
+  margin-top: 0;
+
+  @media (min-width: 768px){
+    width: 30rem;
+  }
+
+  @media (min-width: 1200px){
+    width: 40rem; 
+  }
+  
 `;
 
 const InfoText = styled.div`
   color: #7E7E7E;
   font-family: "Pretendard-Bold";
-  font-size: 2.25rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  @media (min-width: 768px){
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1200px){
+    font-size: 2rem;
+  }
 `;
 
 const OkayBox = styled.button`
   background-color: #4F4F4F;
-  width: 40rem;
-  height: 8rem;
+  width: 20rem;
+  height: 4rem;
   border-radius: 3.125rem;
-  font-size: 3.125rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: "Pretendard-Bold";
   color: white;
   margin-bottom: 2rem;
+
+  @media (min-width: 768px){
+    height: 5rem;
+    width: 30rem;
+  }
+
+  @media (min-width: 1200px){
+    width: 40rem;
+    height: 6rem;
+    font-size: 2.5rem;
+  }
 `;
 
 export default FaceMainPage;
