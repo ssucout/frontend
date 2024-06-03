@@ -27,7 +27,6 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
 
     @media (min-width: 768px) {
         padding: 2rem;
@@ -45,7 +44,7 @@ const QuizNum = styled.div`
     }
     @media (min-width: 1200px){
       margin-top: 3rem;
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 `;
 
@@ -53,31 +52,33 @@ const QuizSentence = styled.div`
     text-align: center;
     font-size: 2rem;
     color: #656161;
-    margin-top: 8rem;
+    margin-top: 3rem;
 
     @media (min-width: 768px){
-      margin-top: 15rem;
+      margin-top: 6rem;
     }
 
     @media(min-width: 1200px){
-      margin-top: 15rem;
+      margin-top: 6rem;
       font-size: 2.5rem;
     }
 `;
 
 const Buttons = styled.div`
-  margin-top: 8rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 
   @media (min-width: 768px){
-    margin-top: 15rem;
+    margin-top: 6rem;
+    gap: 1rem;
   }
 
   @media (min-width: 1200px){
-    margin-top: 15rem;
+    margin-top: 6rem;
+    gap: 2rem;
   }
 `;
 

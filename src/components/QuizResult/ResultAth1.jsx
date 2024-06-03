@@ -24,10 +24,9 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
+    justify-content: center;    
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
         height: auto;
         padding: 2rem 1rem;
     }
