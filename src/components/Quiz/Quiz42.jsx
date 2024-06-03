@@ -11,7 +11,7 @@ function Quiz4_2({ onAnswer }) {
       <QuizSentence>나는</QuizSentence>
       <Buttons>
         <Button onClick={() => navigate('/quiz/result/2d')}>2D가 좋다.</Button>
-        <Button onClick={() => navigate('/quiz/result/2d')}>3D가 좋다.</Button>
+        <Button onClick={() => navigate('/quiz/result/3d')}>3D가 좋다.</Button>
       </Buttons>
     </Container>
   );
