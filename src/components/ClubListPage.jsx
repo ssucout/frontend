@@ -160,6 +160,43 @@ const SearchContainer = styled.div`
     width: 80%;
 `;
 
+const SearchBox = styled.input`
+    background-color: white;
+    width: 100%;
+    height: 3rem;
+    border-radius: 1.5rem;
+    border: none;
+    font-size: 0.8rem;
+
+    @media (min-width: 768px){
+        height: 4rem;
+        font-size: 1rem;
+    }
+    @media (min-width: 1200px){
+        height: 5.5rem;
+        font-size: 1.2rem;
+    }
+`;
+
+const SearchImage = styled.img`
+    width: 2rem;
+    height: 2rem;
+    margin-left: -3rem;
+    cursor: pointer;
+    /* z-index: 1; */
+
+    @media (min-width: 768px){
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    @media (min-width: 1200px){
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-left: -4rem;
+    }
+`;
+
 const ClubListBox = styled.div`
     display: flex;
     flex-direction: column;
@@ -172,22 +209,6 @@ const ClubListBox = styled.div`
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better look */
 `;
 
-const SearchBox = styled.input`
-    background-color: rgba(255, 255, 255, 1);
-    width: 100%;
-    height: 3rem;
-    border-radius: 1.5rem;
-    border: 0.0625rem solid rgba(255, 255, 255, 0.877);
-    font-size: 1rem;
-`;
-
-const SearchImage = styled.img`
-    width: 2rem;
-    height: 2rem;
-    margin-left: -3rem;
-    cursor: pointer;
-    z-index: 1;
-`;
 
 const ClubItem = styled.div`
     cursor: pointer;
@@ -195,8 +216,8 @@ const ClubItem = styled.div`
     border-radius: 1rem; /* Add border-radius here */
     padding: 1.5%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     width: 95%;
     margin-top: 0.5rem; /* Adjust margin as needed */
     margin-right: 1rem;
@@ -209,7 +230,15 @@ const ClubCategory = styled.div`
     color: #4F4F4F;
     font-family: "Pretendard";
     text-align: left;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
+
+    @media (min-width: 768px){
+        font-size: 0.8rem;
+    }
+
+    @media (min-width: 1200px){
+        font-size: 1rem;
+    }
 `;
 
 const ClubName = styled.div`
@@ -218,19 +247,27 @@ const ClubName = styled.div`
     text-align: left;
     flex-grow: 1;
     margin-left: 1rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
+
+    @media (min-width: 768px){
+        font-size: 1rem;
+    }
+
+    @media (min-width: 1200px){
+        font-size: 1.2rem;
+    }
 `;
 
 const ReviewStars = styled.div`
     font-size: 1rem;
     color: rgba(255, 204, 0, 1);
 
-    @media (max-width: 768px) {
-        font-size: 25px;
+    @media (min-width: 768px){
+        font-size: 1.5rem;
     }
 
-    @media (max-width: 480px) {
-        font-size: 20px;
+    @media (min-width: 1200px){
+        font-size: 1.8rem;
     }
 `;
 
