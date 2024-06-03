@@ -27,59 +27,61 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
 
-  @media (max-width: 768px) {
-    padding: 2rem;
+  @media (min-width: 768px) {
+    padding: 1rem;
   }
 `;
 
 const QuizNum = styled.div`
-  font-size: 2.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #4F4F4F;
 
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
+  @media (min-width: 768px) {
+    font-size: 2rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 1.25rem;
+  @media (min-width: 1200px) {
+    font-size: 2rem;
   }
 `;
 
 const QuizSentence = styled.div`
   text-align: center;
-  font-size: 4.5rem;
+  font-size: 2rem;
   color: #656161;
-  margin-top: 12rem;
+  margin-top: 6rem;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 3rem;
     margin-top: 6rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 2rem;
-    margin-top: 4rem;
+  @media (min-width: 1200px) {
+    font-size: 3rem;
+    margin-top: 6rem;
   }
 `;
 
 const Buttons = styled.div`
-  margin-top: 20rem;
+  margin-top: 6rem;
   display: flex;
   flex-direction: column;
+  width: 15rem;
+  height: 7.8125rem;
   align-items: center;
-  gap: 4rem; /* 간격 설정 */
+  gap: 1rem; /* 간격 설정 */
 
-  @media (max-width: 768px) {
-    margin-top: 10rem;
+  @media (min-width: 768px) {
+    margin-top: 6rem;
     gap: 2rem;
   }
 
-  @media (max-width: 480px) {
+  @media (min-width: 1200px) {
     margin-top: 6rem;
-    gap: 1rem;
+    gap: 4rem;
   }
 `;
 

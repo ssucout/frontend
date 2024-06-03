@@ -27,81 +27,84 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
         padding: 2rem;
     }
 `;
 
 const QuizNum = styled.div`
-    font-size: 2.25rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #4F4F4F;
 
-    @media (max-width: 768px) {
+    @media (min-width: 768px) {
         font-size: 1.5rem;
+        /* padding-top: 2rem; */
+    }
+    @media (min-width: 1200px){
+      margin-top: 3rem;
+      font-size: 2.5rem;
     }
 `;
 
 const QuizSentence = styled.div`
     text-align: center;
-    font-size: 4.5rem;
+    font-size: 2rem;
     color: #656161;
-    margin-top: 15rem;
+    margin-top: 3rem;
 
-    @media (max-width: 768px) {
-        font-size: 3rem;
-        margin-top: 10rem;
+    @media (min-width: 768px){
+      margin-top: 6rem;
     }
 
-    @media (max-width: 480px) {
-        font-size: 2rem;
-        margin-top: 5rem;
+    @media(min-width: 1200px){
+      margin-top: 6rem;
+      font-size: 2.5rem;
     }
 `;
 
 const Buttons = styled.div`
-  margin-top: 20rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 
-  @media (max-width: 768px) {
-    margin-top: 10rem;
-    gap: 0.5rem;
+  @media (min-width: 768px){
+    margin-top: 6rem;
+    gap: 1rem;
   }
 
-  @media (max-width: 480px) {
-    margin-top: 5rem;
-    gap: 0.25rem;
+  @media (min-width: 1200px){
+    margin-top: 6rem;
+    gap: 2rem;
   }
 `;
 
 const Button = styled.button`
   color: rgb(255, 255, 255);
   background-color: #4F4F4F;
-  width: 50rem;
-  height: 9.375rem;
-  font-size: 2rem;
+  width: 22rem;
+  height: 5rem;
+  font-size: 1rem;
   border-radius: 3.125rem;
   font-family: "The-Jams";
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border: none;
   cursor: pointer;
 
-  @media (max-width: 768px) {
-    width: 120%;
+  @media (min-width: 768px){
+    width: 140%;
+    height: 7rem;
     font-size: 1.5rem;
+  }
+
+  @media (min-width: 1200px){
+    width: 150%;
     height: 7rem;
   }
 
-  @media (max-width: 480px) {
-    width: 120%;
-    font-size: 1rem;
-    height: 5rem;
-  }
 `;
 
 export default Quiz1;

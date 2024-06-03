@@ -50,40 +50,40 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     padding: 2rem;
   }
 `;
 
 const QuizNum = styled.div`
   text-align: center;
-  font-size: 2.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #4F4F4F;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 1.25rem;
+  @media (min-width: 1200px) {
+    font-size: 2rem;
+    margin-top:3rem;
   }
 `;
 
 const QuizSentence = styled.div`
   text-align: center;
-  font-size: 4.5rem;
+  font-size: 2rem;
   color: #656161;
   margin-top: 2rem;
 
-  @media (max-width: 768px) {
-    font-size: 3rem;
+  @media (min-width: 768px) {
+    font-size: 2rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 2rem;
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
   }
 `;
 
@@ -103,16 +103,15 @@ const ButtonRow = styled.div`
   }
   @media (max-width: 480px) {
     flex-direction: row;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 `;
 
 const Button = styled.button`
   background-color: white;
   color: #818181;
-  width: 26.6875rem;
-  height: 15.8125rem;
-  font-size: 2rem;
+  width: 10rem;
+  height: 7.8125rem;
   font-family: "The-Jams";
   border-radius: 1.25rem;
   border-width: .3125rem;
@@ -123,18 +122,18 @@ const Button = styled.button`
   justify-content: center;
   text-align: center;
 
-  @media (max-width: 768px) {
-    width: calc(50% - 0.5rem);
-    height: auto;
+  @media (min-width: 768px) {
+    width: calc(100% - 0.5rem);
+    height: 10rem;
     padding: 1rem;
     font-size: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    width: calc(100% - 0.5rem);
-    height: auto;
+  @media (min-width: 1200px) {
+    width: calc(100%);
+    height: 14rem;
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: 2rem;
   }
 `;
 
@@ -147,13 +146,13 @@ const ButtonText = styled.p`
   text-align: center;
   overflow: hidden;
   margin: 0;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
+  font-size: 1rem;
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 1rem;
+  @media (min-width: 1200px) {
+    font-size: 2rem;
   }
 `;
 

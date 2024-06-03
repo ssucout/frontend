@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import ListButton from '../img/ListButton.png'
+import ListButton from '../img/ListButton.png';
 import axios from 'axios';
 
 function ClubListPage() {
     const [searchTerm, setSearchTerm] = useState('');
-    const navigate = useNavigate();
     const [clubs, setClubs] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
+    const clubsPerPage = 10; // 페이지당 동아리 수 설정
+    const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:8080/club/list')
-            .then(response => {
-                setClubs(response.data);
-            })
-            .catch(error => {
-                console.error('동아리 데이터를 불러오는데 실패했습니다.', error);
-            });
+        fetchClubs(currentPage);
     }, []);
 
     useEffect(() => {
@@ -25,20 +22,61 @@ function ClubListPage() {
             axios.get(`http://localhost:8080/club/list/search?term=${searchTerm}`)
                 .then(response => {
                     setClubs(response.data);
+                    setHasMore(false); // 검색 결과는 무한 스크롤로 추가되지 않음
                 })
                 .catch(error => {
                     console.error('동아리 검색에 실패했습니다.', error);
                 });
         } else {
-            axios.get('http://localhost:8080/club/list')
-                .then(response => {
-                    setClubs(response.data);
-                })
-                .catch(error => {
-                    console.error('동아리 데이터를 불러오는데 실패했습니다.', error);
-                });
+            setClubs([]);
+            setCurrentPage(1);
+            setHasMore(true);
+            fetchClubs(1);
         }
     }, [searchTerm]);
+
+    const fetchClubs = useCallback(async (page) => {
+        try {
+            const response = await axios.get(`http://localhost:8080/club/list?page=${page}&limit=${clubsPerPage}`);
+            if (response.data.length === 0) {
+                setHasMore(false);
+            } else {
+                setClubs(prevClubs => {
+                    const uniqueClubs = removeDuplicateClubs([...prevClubs, ...response.data]);
+                    return uniqueClubs;
+                });
+            }
+        } catch (error) {
+            console.error('동아리 데이터를 불러오는데 실패했습니다.', error);
+        }
+    }, [clubsPerPage]);
+
+    const removeDuplicateClubs = (clubs) => {
+        const seen = new Set();
+        return clubs.filter(club => {
+            const duplicate = seen.has(club.clubId);
+            seen.add(club.clubId);
+            return !duplicate;
+        });
+    };
+
+    const handleScroll = useCallback(() => {
+        if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || !hasMore) {
+            return;
+        }
+        setCurrentPage(prevPage => prevPage + 1);
+    }, [hasMore]);
+
+    useEffect(() => {
+        if (currentPage > 1) {
+            fetchClubs(currentPage);
+        }
+    }, [currentPage, fetchClubs]);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [handleScroll]);
 
     const handleSort = (criteria) => {
         let sortedClubs = [...clubs];
@@ -50,7 +88,7 @@ function ClubListPage() {
                 sortedClubs.sort((a, b) => b.totalStar - a.totalStar);
                 break;
             case 'lowest':
-                sortedClubs.sort((a, b) => a.totalStar - b.totalStar);
+                sortedClubs.sort((a, b) => a.totalStar - b.averageRating);
                 break;
             default:
                 break;
@@ -75,23 +113,22 @@ function ClubListPage() {
 
     return (
         <Background>
-            
-            {/* <BackgroundWhite></BackgroundWhite> */}
+            <SearchContainer>
                 <SearchBox
                     placeholder="동아리 명을 입력하세요"
                     onChange={(term) => { setSearchTerm(term.target.value); }}
                 />
-                <SearchImage src={ListButton} onClick={() => setIsModalOpen(true)}></SearchImage>
-            <ClubList>
-                {clubs.map(club => (
+                <SearchImage src={ListButton} onClick={() => setIsModalOpen(true)} />
+            </SearchContainer>
+            <ClubListBox>
+                {clubs.map((club) => (
                     <ClubItem key={club.clubId} onClick={() => navigate(`/clubs/${club.clubId}`, { state: { club: club } })}>
                         <ClubCategory>{club.clubCategory}</ClubCategory>
                         <ClubName>{club.clubName}</ClubName>
                         <ReviewStars>{renderStars(club.totalStar)}</ReviewStars>
-                        <DivideBar></DivideBar>
                     </ClubItem>
                 ))}
-            </ClubList> 
+            </ClubListBox>
             {isModalOpen && (
                 <Modal>
                     <ModalContent>
@@ -105,95 +142,133 @@ function ClubListPage() {
         </Background>
     );
 }
+
 const Background = styled.div`
-    background-color: rgba(80.75, 27.29, 65.78, 0.2);
+    background-color: #D9D2D8;
     width: 100vw;
-    height: 20vh;;   
-    position: relative;
-    text-align: center;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 1.25rem;
+    overflow-y: auto; /* 스크롤 가능하게 설정 */
 `;
-const ClubList = styled.div`
+
+const SearchContainer = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 11.8%;
+    margin-top: 1rem;
+    width: 80%;
 `;
 
 const SearchBox = styled.input`
-    background-color: rgba(255, 255, 255, 1);
-    width: 57.9375rem;
-    height: 8.5625rem;
-    position: absolute;
-    top: 4.25rem;
-    border-radius: 3.75rem;
-    left: 25%;
-    border: 0.0625rem solid rgba(255, 255, 255, 0.877);
-    margin-bottom: 1.25rem;
-    font-size: 2rem;
-    line-height: 100;
+    background-color: white;
+    width: 100%;
+    height: 3rem;
+    border-radius: 1.5rem;
+    border: none;
+    font-size: 0.8rem;
+
+    @media (min-width: 768px){
+        height: 4rem;
+        font-size: 1rem;
+    }
+    @media (min-width: 1200px){
+        height: 5.5rem;
+        font-size: 1.2rem;
+    }
 `;
 
 const SearchImage = styled.img`
-    /* background-image: url('../img/ListButton.png'); */
-    width: 5.25rem;
-    height: 5.25rem;
-    position:absolute;
-    top: 5rem;
+    width: 2rem;
+    height: 2rem;
+    margin-left: -3rem;
     cursor: pointer;
-    margin-left: -80%;
-    top:10rem;
-    z-index: 1;  
-    position: relative;
+    /* z-index: 1; */
+
+    @media (min-width: 768px){
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    @media (min-width: 1200px){
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-left: -4rem;
+    }
 `;
+
+const ClubListBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 80%;
+    margin-top: 1rem; /* 검색 박스와 리스트 간의 간격 */
+    border-radius: 1rem; /* Add border-radius here */
+    padding: 1rem; /* Add padding for better appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better look */
+`;
+
 
 const ClubItem = styled.div`
     cursor: pointer;
     border: 0.0625rem solid #ccc;
+    border-radius: 1rem; /* Add border-radius here */
     padding: 1.5%;
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin-top: 0.5rem; /* Adjust margin as needed */
+    margin-right: 1rem;
+    margin-left : 1rem;
+    background-color: #fff; /* Optional: add background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better look */
 `;
 
-const ClubCategory = styled.span`
-    color: rgba(0, 0, 0, 1);
-    width: 6.25rem;    
-    position: absolute;
-    font-family: Inter;
+const ClubCategory = styled.div`
+    color: #4F4F4F;
+    font-family: "Pretendard";
     text-align: left;
-    font-size: 1.5rem;
-    left: 12rem;
-    margin-top:1rem;
+    font-size: 0.5rem;
+
+    @media (min-width: 768px){
+        font-size: 0.8rem;
+    }
+
+    @media (min-width: 1200px){
+        font-size: 1rem;
+    }
 `;
 
-const ClubName = styled.span`
+const ClubName = styled.div`
     color: rgba(0, 0, 0, 1);
-    width: 23.8125rem;    
-    position: absolute;
-    left: 34.375rem;
-    font-family: Inter;
+    font-family: "Pretendard";
     text-align: left;
-    font-size: 2.25rem;
-    margin-right: 70%;
-    flex-direction: column;
-`;
+    flex-grow: 1;
+    margin-left: 1rem;
+    font-size: 0.8rem;
 
-const DivideBar = styled.div`
-    border: 2px solid rgba(196.16, 196.16, 196.16, 1);
-    width: 111.875rem;
-    height: 0rem;
-    position: relative;
-    top: 30%;
-    margin: 1.25rem 0;
+    @media (min-width: 768px){
+        font-size: 1rem;
+    }
+
+    @media (min-width: 1200px){
+        font-size: 1.2rem;
+    }
 `;
 
 const ReviewStars = styled.div`
-    font-size: 30px;
+    font-size: 1rem;
     color: rgba(255, 204, 0, 1);
-    margin-left: 20%;
-    
+
+    @media (min-width: 768px){
+        font-size: 1.5rem;
+    }
+
+    @media (min-width: 1200px){
+        font-size: 1.8rem;
+    }
 `;
 
 const Modal = styled.div`
@@ -225,7 +300,7 @@ const ModalOption = styled.button`
     margin: 10px 0;
     cursor: pointer;
     &:hover {
-        text-decoration: underline;
+        color: blue;
     }
 `;
 
@@ -236,8 +311,9 @@ const ModalClose = styled.button`
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
+    &:hover {
+        color: darkred;
+    }
 `;
-
-
 
 export default ClubListPage;

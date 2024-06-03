@@ -9,16 +9,16 @@ function MapPage() {
 
   return (
     <Container>
-      <SubText>내 동방은 어디일까?</SubText>
-      <MainText>동아리방 둘러보기</MainText>
-      <FloorBanner>
-        <Button onClick={() => setCurrentMap(Map1F)}>1F</Button>
-        <Button onClick={() => setCurrentMap(Map2F)}>2F</Button>
-        <Button onClick={() => setCurrentMap(Map3F)}>3F</Button>
-      </FloorBanner>
-      <ImageBox>
-        <MapImage src={currentMap}></MapImage>
-      </ImageBox>
+      <Content>
+        <FloorBanner>
+          <Button onClick={() => setCurrentMap(Map1F)}>1F</Button>
+          <Button onClick={() => setCurrentMap(Map2F)}>2F</Button>
+          <Button onClick={() => setCurrentMap(Map3F)}>3F</Button>
+        </FloorBanner>
+        <ImageBox>
+          <MapImage src={currentMap}></MapImage>
+        </ImageBox>
+      </Content>
     </Container>
   )
 }
@@ -27,56 +27,61 @@ const Container = styled.div`
   background-color: #D9D2D8;
   width: 100vw;
   min-height: 100vh;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Content = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const SubText = styled.p`
-  color: #595959;
-  font-size: 2.25rem;
-  font-family: "Pretendard-Bold";
-  text-align: center;
-  margin-top: 5rem;
-`;
-
-const MainText = styled.div`
-  color: white;
-  font-size: 4rem;
-  font-family: "Pretendard-ExtraBold";
-  -webkit-text-stroke: #6c4e4e .100rem;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-  margin-top: -0.5rem;
-`;
-
 const FloorBanner = styled.div`
   background-color: #D9D9D9;
-  width: 100vw;
-  height: 6rem;
-  margin-top: 3rem;
-  display: flex; /* 플렉스 컨테이너로 설정 */
+  width: 100%;
+  display: flex; 
   flex-direction: row;
-  align-items: center; /* 수직 가운데 정렬 */
-  /* justify-content: center; */
+  align-items: center; 
+  justify-content: left;
 `;
 
 const Button = styled.p`
-  margin: 2rem;
+  margin: 1rem;
   color: #656565;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Pretendard-ExtraBold";
+
+  @media (min-width: 768px){
+    font-size: 2rem;
+    margin: 1.5rem;
+  }
 `;
 
 const ImageBox = styled.div`
   background-color: white;
   width: 100vw;
-  height: 51.7331rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const MapImage = styled.img`
-  width: 100vw;
-  object-fit:cover
+  justify-content: center;
+  width: 100%;
+  object-fit: cover;
+
+  @media (min-width: 768px){
+    width: 80%;
+  }
+
+  @media (min-width: 1200px){
+    width: 60%;
+  }
 `;
 
-export default MapPage
+export default MapPage;

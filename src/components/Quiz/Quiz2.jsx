@@ -28,41 +28,40 @@ const Background = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     padding: 2rem;
   }
 `;
 
 const QuizNum2 = styled.div`
-  font-size: 2.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #4F4F4F;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    font-size: 1.25rem;
+  @media (min-width: 1200px) {
+    margin-top:3rem;
+    font-size: 2rem;
   }
 `;
 
 const QuizSentence2 = styled.div`
   text-align: center;
-  margin-top: 7rem;
-  font-size: 4.5rem;
+  margin-top: 3rem;
+  font-size: 2rem;
   color: #656161;
 
-  @media (max-width: 768px) {
-    font-size: 3rem;
-    margin-top: 5rem;
+  @media (min-width: 768px) {
+    margin-top: 6rem;
   }
-
-  @media (max-width: 480px) {
-    font-size: 2rem;
-    margin-top: 3rem;
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
+    margin-top: 6rem;
   }
 `;
 
@@ -71,25 +70,25 @@ const Buttons2 = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  margin-top: 10rem;
+  margin-top: 3rem;
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     gap: 1rem;
-    margin-top: 5rem;
+    margin-top: 6rem;
   }
 
-  @media (max-width: 480px) {
-    gap: 0.5rem;
-    margin-top: 3rem;
+  @media (min-width: 1200px) {
+    gap:2rem;
+    margin-top: 6rem;
   }
 `;
 
 const Button2 = styled.button`
   color: rgb(255, 255, 255);
   background-color: #4F4F4F;
-  width: 50rem;
-  height: 9.375rem;
-  font-size: 2rem;
+  width: 22rem;
+  height: 5rem;
+  font-size: 1rem;
   border-radius: 3.125rem;
   font-family: "The-Jams";
   text-align: center;
@@ -97,16 +96,16 @@ const Button2 = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (max-width: 768px) {
-    width: 120%;
+  @media (min-width: 768px) {
+    width: 140%;
     font-size: 1.5rem;
-    height: 6rem;
+    height: 7rem;
   }
 
-  @media (max-width: 480px) {
-    width: 120%;
-    font-size: 1rem;
-    height: 4.5rem;
+  @media (min-width: 1200px) {
+    width: 150%;
+    font-size: 2rem;
+    height: 7rem;
   }
 `;
 
