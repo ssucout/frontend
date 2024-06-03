@@ -47,10 +47,10 @@ function ClubListPage() {
                 sortedClubs.sort((a, b) => a.clubName.localeCompare(b.clubName));
                 break;
             case 'highest':
-                sortedClubs.sort((a, b) => b.averageRating - a.averageRating);
+                sortedClubs.sort((a, b) => b.totalStar - a.totalStar);
                 break;
             case 'lowest':
-                sortedClubs.sort((a, b) => a.averageRating - b.averageRating);
+                sortedClubs.sort((a, b) => a.totalStar - b.averageRating);
                 break;
             default:
                 break;
@@ -75,23 +75,24 @@ function ClubListPage() {
 
     return (
         <Background>
-            
             {/* <BackgroundWhite></BackgroundWhite> */}
                 <SearchBox
                     placeholder="동아리 명을 입력하세요"
                     onChange={(term) => { setSearchTerm(term.target.value); }}
                 />
                 <SearchImage src={ListButton} onClick={() => setIsModalOpen(true)}></SearchImage>
-            <ClubList>
+                <ClubList>
                 {clubs.map(club => (
                     <ClubItem key={club.clubId} onClick={() => navigate(`/clubs/${club.clubId}`, { state: { club: club } })}>
                         <ClubCategory>{club.clubCategory}</ClubCategory>
                         <ClubName>{club.clubName}</ClubName>
                         <ReviewStars>{renderStars(club.totalStar)}</ReviewStars>
-                        <DivideBar></DivideBar>
+
                     </ClubItem>
+                    
                 ))}
-            </ClubList> 
+                
+            </ClubList>
             {isModalOpen && (
                 <Modal>
                     <ModalContent>
@@ -105,94 +106,320 @@ function ClubListPage() {
         </Background>
     );
 }
+// const Background = styled.div`
+//     background-color: rgba(80.75, 27.29, 65.78, 0.2);
+//     width: 100vw;
+//     height: 28vh;  
+//     position: relative;
+//     text-align: center;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding-top: 1.25rem;
+// `;
+// const ClubList = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin-top: 11.8%;
+// `;
+
+// const SearchBox = styled.input`
+//     background-color: rgba(255, 255, 255, 1);
+//     width: 57.9375rem;
+//     height: 8.5625rem;
+//     position: absolute;
+//     top: 4.25rem;
+//     border-radius: 3.75rem;
+//     left: 25%;
+//     border: 0.0625rem solid rgba(255, 255, 255, 0.877);
+//     margin-bottom: 1.25rem;
+//     font-size: 2rem;
+//     line-height: 100;
+// `;
+
+// const SearchImage = styled.img`
+//     /* background-image: url('../img/ListButton.png'); */
+//     width: 5.25rem;
+//     height: 5.25rem;
+//     position:absolute;
+//     top: 5rem;
+//     cursor: pointer;
+//     margin-left: -80%;
+//     top:10rem;
+//     z-index: 1;  
+//     position: relative;
+// `;
+
+// const ClubItem = styled.div`
+//     cursor: pointer;
+//     border: 0.0625rem solid #ccc;
+//     padding: 1.5%;
+//     flex-direction: column;
+// `;
+
+// const ClubCategory = styled.span`
+//     color: rgba(0, 0, 0, 1);
+//     width: 6.25rem;    
+//     position: absolute;
+//     font-family: Inter;
+//     text-align: left;
+//     font-size: 1.5rem;
+//     left: 12rem;
+//     margin-top:1rem;
+// `;
+
+// const ClubName = styled.span`
+//     color: rgba(0, 0, 0, 1);
+//     width: 23.8125rem;    
+//     position: absolute;
+//     left: 34.375rem;
+//     font-family: Inter;
+//     text-align: left;
+//     font-size: 2.25rem;
+//     margin-right: 70%;
+//     flex-direction: column;
+// `;
+
+// const DivideBar = styled.div`
+//     border: 2px solid rgba(196.16, 196.16, 196.16, 1);
+//     width: 111.875rem;
+//     height: 0rem;
+//     position: relative;
+//     top: 30%;
+//     margin: 1.25rem 0;
+// `;
+
+// const ReviewStars = styled.div`
+//     font-size: 30px;
+//     color: rgba(255, 204, 0, 1);
+//     margin-left: 20%;
+    
+// `;
+
+// const Modal = styled.div`
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// `;
+
+// const ModalContent = styled.div`
+//     background-color: white;
+//     padding: 20px;
+//     border-radius: 10px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// `;
+
+// const ModalOption = styled.button`
+//     background: none;
+//     border: none;
+//     color: black;
+//     font-size: 18px;
+//     margin: 10px 0;
+//     cursor: pointer;
+//     &:hover {
+//         text-decoration: underline;
+//     }
+// `;
+
+// const ModalClose = styled.button`
+//     background: none;
+//     border: none;
+//     color: red;
+//     font-size: 18px;
+//     margin-top: 20px;
+//     cursor: pointer;
+// `;
+
+
+
+// export default ClubListPage;
+
 const Background = styled.div`
     background-color: rgba(80.75, 27.29, 65.78, 0.2);
     width: 100vw;
-    height: 20vh;;   
+    height: 30vh;
     position: relative;
     text-align: center;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 1.25rem;
+
+    @media (max-width: 1024px) {
+        height: 32vh;
+        padding-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        height: 36vh;
+        padding-top: 0.75rem;
+    }@
+
+    @media (max-width: 480px) {
+        height: 40vh;
+        padding-top: 0.5rem;
+    }
 `;
 const ClubList = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 11.8%;
-`;
+    margin-top: 5%; 
+    
+    width:100%;
+    
+    @media (max-width: 768px) {
+        margin-top: 3%;
+    }
 
+    @media (max-width: 480px) {
+        margin-bottom: 3%;
+    }
+`;
 const SearchBox = styled.input`
     background-color: rgba(255, 255, 255, 1);
     width: 57.9375rem;
     height: 8.5625rem;
-    position: absolute;
+    position: relative;
     top: 4.25rem;
     border-radius: 3.75rem;
-    left: 25%;
     border: 0.0625rem solid rgba(255, 255, 255, 0.877);
     margin-bottom: 1.25rem;
     font-size: 2rem;
     line-height: 100;
+
+    @media (max-width: 768px) {
+        width: 40rem;
+        height: 6rem;
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        width: 90%;
+        height: 5rem;
+        left: 5%;
+        font-size: 1.25rem;
+    }
 `;
 
+
 const SearchImage = styled.img`
-    /* background-image: url('../img/ListButton.png'); */
-    width: 10.25rem;
-    height: 1.25rem;
-    position:absolute;
-    top: 5rem;
-    cursor: pointer;
-    margin-left: 1rem;
-    z-index: 1;  
+    width: 5.25rem;
+    height: 5.25rem;
     position: relative;
+    top:70%;
+    right:60%;
+    cursor: pointer;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+        width: 4rem;
+        height: 4rem;
+        top: 8rem;
+        left: 85%;
+    }
+
+    @media (max-width: 480px) {
+        width: 3rem;
+        height: 3rem;
+        top: 7rem;
+        left: 90%;
+    }
 `;
 
 const ClubItem = styled.div`
     cursor: pointer;
-    border: 0.0625rem solid #ccc;
+    border: 0.0625rem solid #ccc;    
     padding: 1.5%;
-    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95vw;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
+        padding: 0.75rem;
+    }
 `;
 
 const ClubCategory = styled.span`
     color: rgba(0, 0, 0, 1);
-    width: 6.25rem;    
-    position: absolute;
     font-family: Inter;
     text-align: left;
+    width: 1000vw;
     font-size: 1.5rem;
-    left: 12rem;
-    margin-top:1rem;
+    
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1rem;
+    }
 `;
 
 const ClubName = styled.span`
     color: rgba(0, 0, 0, 1);
-    width: 23.8125rem;    
-    position: absolute;
-    left: 34.375rem;
     font-family: Inter;
     text-align: left;
+    width: 6000vw; 
     font-size: 2.25rem;
-    margin-right: 70%;
-    flex-direction: column;
-`;
+    flex-grow: 1;
+    margin-left:15%;
+    @media (max-width: 768px) {
+        font-size: 1.75rem;
+    }
 
-const DivideBar = styled.div`
-    border: 2px solid rgba(196.16, 196.16, 196.16, 1);
-    width: 111.875rem;
-    height: 0rem;
-    position: relative;
-    top: 30%;
-    margin: 1.25rem 0;
+    @media (max-width: 480px) {
+        font-size: 1.5rem;
+    }
 `;
 
 const ReviewStars = styled.div`
     font-size: 30px;
     color: rgba(255, 204, 0, 1);
-    margin-left: 20%;
-    
+    margin-left: 0%;
+
+    @media (max-width: 768px) {
+        font-size: 25px;
+        margin-left: 10%;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 20px;
+        margin-left: 5%;
+    }
+`;
+
+const DivideBar = styled.div`
+    border: 2px solid rgba(196.16, 196.16, 196.16, 1);
+    width:100%;
+    height: 0vh;
+    position: relative;
+    top: 70%;
+    margin: 1.25rem 0;
+
+    @media (max-width: 768px) {
+        width: 80%;
+    }
+
+    @media (max-width: 480px) {
+        width: 90%;
+    }
 `;
 
 const Modal = styled.div`
@@ -236,7 +463,5 @@ const ModalClose = styled.button`
     margin-top: 20px;
     cursor: pointer;
 `;
-
-
 
 export default ClubListPage;
