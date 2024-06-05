@@ -28,23 +28,23 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   
-
   @media (min-width: 768px) {
-    padding: 1rem;
+    padding: 2rem;
   }
 `;
 
 const QuizNum = styled.div`
+  text-align: center;
   font-size: 1rem;
   font-weight: 600;
   color: #4F4F4F;
 
   @media (min-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
 
   @media (min-width: 1200px) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -52,7 +52,7 @@ const QuizSentence = styled.div`
   text-align: center;
   font-size: 2rem;
   color: #656161;
-  margin-top: 6rem;
+  margin-top: 3rem;
 
   @media (min-width: 768px) {
     font-size: 3rem;
@@ -61,18 +61,17 @@ const QuizSentence = styled.div`
 
   @media (min-width: 1200px) {
     font-size: 3rem;
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
 `;
 
 const Buttons = styled.div`
-  margin-top: 6rem;
   display: flex;
   flex-direction: column;
-  width: 15rem;
-  height: 7.8125rem;
   align-items: center;
-  gap: 1rem; /* 간격 설정 */
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
 
   @media (min-width: 768px) {
     margin-top: 6rem;
@@ -80,8 +79,8 @@ const Buttons = styled.div`
   }
 
   @media (min-width: 1200px) {
-    margin-top: 6rem;
-    gap: 4rem;
+    margin-top: 8rem;
+    gap: 2rem;
   }
 `;
 
@@ -89,24 +88,24 @@ const Button = styled.button`
   color: #818181;
   background-color: white;
   border: none;
-  width: 50rem;
-  height: 9.375rem;
-  font-size: 2rem;
+  width: 22rem;
+  height: 5rem;
+  font-size: 1rem;
   border-radius: 3.125rem;
   font-family: "The-Jams";
   text-align: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-  @media (max-width: 768px) {
-    width: 140%;
+  @media (min-width: 768px) {
+    width: 500%;
     height: 6rem;
     font-size: 1.5rem;
   }
 
-  @media (max-width: 480px) {
-    width: 140%;
-    height: 4rem;
-    font-size: 1.2rem;
+  @media (min-width: 1200px) {
+    width: 500%;
+    height: 7rem;
+    font-size: 2rem;
   }
 `;
 
