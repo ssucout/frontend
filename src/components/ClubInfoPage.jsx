@@ -81,13 +81,13 @@ function ClubInfoPage() {
     return (
         <Container>
             <Title>{club.clubName}</Title>
-            <AverageRatingContainer>
-                <AverageRating>{club.totalStar}</AverageRating>
-                <Stars>{renderStars(club.totalStar)}</Stars>
-            </AverageRatingContainer>
-            <Header onClick={() => setIsModalOpen(true)}>
-                <HeaderText>등록순</HeaderText>
-            </Header>
+            <HeadingBanner>
+                <AverageRatingContainer>
+                    <AverageRating>{club.totalStar}</AverageRating>
+                    <Stars>{renderStars(club.totalStar)}</Stars>
+                </AverageRatingContainer>
+                <Header onClick={() => setIsModalOpen(true)}> 등록순 </Header>
+            </HeadingBanner>
             {isModalOpen && (
                 <Modal>
                     <ModalContent>
@@ -113,182 +113,11 @@ function ClubInfoPage() {
                 <NoReviews>후기가 없습니다.</NoReviews>
             )}
             <ReviewButton onClick={() => navigate(`/clubs/${club.clubId}/review`, { state: { club :club } })}>
-                <ReviewButtonText>후기 작성하기</ReviewButtonText>
+                후기 작성하기
             </ReviewButton>
         </Container>
     );
 }
-
-// const Container = styled.div`
-//     width: 100vw;
-//     height: 25vh;   
-    
-//     position: relative;
-//     width: 1024px;
-//     height: 1440px;
-//     background-color: rgba(255, 255, 255, 1);
-//     padding: 20px;
-// `;
-
-// const Title = styled.div`
-//     color: rgba(55, 55, 55, 1);
-//     font-family: Inter;
-//     font-size: 50px;
-//     font-weight: bold;
-//     text-align: center;
-//     margin-bottom: 20px;
-// `;
-
-// const AverageRatingContainer = styled.div`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin-bottom: 20px;
-// `;
-
-// const AverageRating = styled.div`
-//     font-size: 40px;
-//     color: rgba(128, 128, 128, 1);
-//     margin-right: 10px;
-// `;
-
-// const Stars = styled.div`
-//     font-size: 40px;
-//     color: rgba(255, 204, 0, 1);
-// `;
-
-// const Header = styled.div`
-//     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-//     width: 154px;
-//     height: 57px;
-//     background-color:rgba(81.00000277161598, 27.000000290572643, 66.00000366568565, 0.20000000298023224);
-//     border-radius: 40px;
-//     display: flex;
-//     position : relative;
-//     justify-content: center;
-//     align-items: center;
-//     margin-bottom: 20px;
-//     left : 85%;
-//     cursor: pointer;
-// `;
-
-// const HeaderText = styled.span`
-//     color: rgba(255, 255, 255, 1);
-//     font-family: Inter;
-//     font-size: 24px;
-    
-// `;
-
-// const Separator = styled.div`
-//     border: 1px solid rgba(226, 226, 226, 1);
-//     margin: 20px 0;
-// `;
-
-// const Review = styled.div`
-//     margin-bottom: 20px;
-//     padding-bottom: 20px;
-//     border-bottom: 1px solid rgba(226, 226, 226, 1);
-// `;
-
-// const ReviewHeader = styled.div`
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     margin-bottom: 10px;
-// `;
-
-// const ReviewYear = styled.div`
-//     color: rgba(128, 128, 128, 1);
-//     font-size: 18px;
-// `;
-
-// const ReviewStars = styled.div`
-//     font-size: 20px;
-//     color: rgba(255, 204, 0, 1);
-// `;
-
-// const ReviewContent = styled.div`
-//     font-size: 18px;
-//     color: rgba(55, 55, 55, 1);
-//     margin-bottom: 10px;
-// `;
-
-// const ReviewDetail = styled.div`
-//     font-size: 14px;
-//     color: rgba(128, 128, 128, 1);
-// `;
-
-// const ReviewButton = styled.div`
-//     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-//     background-color:rgba(81.00000277161598, 27.000000290572643, 66.00000366568565, 0.20000000298023224);
-//     width: 300px;
-//     height: 70px;
-//     border-radius: 25px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     cursor: pointer;
-//     margin: 1.25rem auto;
-    
-// `;
-
-// const ReviewButtonText = styled.span`
-//     color: rgba(255, 255, 255, 1);
-//     font-family: Inter;
-//     font-size: 20px;
-// `;
-
-// const NoReviews = styled.div`
-//     color: rgba(128, 128, 128, 1);
-//     font-family: Inter;
-//     font-size: 20px;
-//     text-align: center;
-//     margin: 50px 0;
-// `;
-// const Modal = styled.div`
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background-color: rgba(0, 0, 0, 0.5);
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-    
-// `;
-
-// const ModalContent = styled.div`
-//     background-color: white;
-//     padding: 20px;
-//     border-radius: 10px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     cursor: pointer;
-// `;
-
-// const ModalOption = styled.button`
-//     background: none;
-//     border: none;
-//     color: black;
-//     font-size: 18px;
-//     margin: 10px 0;
-//     cursor: pointer;
-//     &:hover {
-//         text-decoration: underline;
-//     }
-    
-// `;
-
-// const ModalClose = styled.button`
-//     background: none;
-//     border: none;
-//     color: red;
-//     font-size: 18px;
-//     margin-top: 20px;
-//     cursor: pointer;
-// `;
 
 const Container = styled.div`
     width: 100vw;
@@ -309,11 +138,12 @@ const Container = styled.div`
 
 const Title = styled.div`
     color: rgba(55, 55, 55, 1);
-    font-family: Inter;
-    font-size: 1.875rem;
+    font-family: "Pretendard";
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
 
     @media (min-width: 768px) {
         font-size: 3.125rem;
@@ -358,63 +188,66 @@ const Stars = styled.div`
     }
 `;
 
-const Header = styled.div`
+const HeadingBanner = styled.div`
+  display: flex;
+  justify-content:row;
+  margin-top: 2rem;
+`;
+
+const Header = styled.button`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 5rem;
     height: 2rem;
-    background-color: rgba(81, 27, 66, 0.2);
+    background-color: #D9D2D8;
     border-radius: 2.5rem;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1.25rem;
+    margin-left: auto;
     cursor: pointer;
-    position: relative;
-    left: 70%;
-
-    @media (min-width: 768px) {
-        width: 7rem;
-        height: 3rem;
-        left: 80%;
-    }
-
-    @media (min-width: 1200px) {
-        width: 10rem;
-        height: 3.5rem;
-        left: 85%;
-    }
-`;
-
-const HeaderText = styled.span`
-    color: rgba(255, 255, 255, 1);
-    font-family: Inter;
+    color: white;
+    font-family: "Pretendard-Bold";
     font-size: 1rem;
 
-    @media (min-width: 768px) {
-        font-size: 1.5rem;
+    @media (min-width: 768px){
+        width: 5.5rem;
+        height: 2.5rem;
     }
 
-    @media (min-width: 1200px) {
-        font-size: 1.5rem;
+    @media (min-width: 1200px){
+        width: 6rem;
+        height: 2.7rem;
+        font-size: 1.2rem;
+        margin-right: 1.5rem;
     }
 `;
 
 const Separator = styled.div`
     border: 1px solid rgba(226, 226, 226, 1);
     margin: 1.25rem 0;
+    margin-top: 0rem;
 `;
 
 const Review = styled.div`
     margin-bottom: 1.25rem;
     padding-bottom: 1.25rem;
     border-bottom: 0.06rem solid rgba(226, 226, 226, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `;
 
 const ReviewHeader = styled.div`
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 480px){
+        margin-bottom: 0.3rem;
+    }
 `;
 
 const ReviewYear = styled.div`
@@ -425,7 +258,7 @@ const ReviewYear = styled.div`
         font-size: 1.2rem;
     }
     @media (min-width: 1200px) {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 `;
 
@@ -442,12 +275,14 @@ const ReviewStars = styled.div`
 `;
 
 const ReviewContent = styled.div`
+    font-family: "Pretendard";
     font-size: 1rem;
     color: rgba(55, 55, 55, 1);
-    margin-bottom: 0.625rem;
+    margin-bottom: 1.5rem;
 
     @media (min-width: 768px) {
         font-size: 1.5rem;
+        margin-bottom: 1.7rem;
     }
     @media (min-width: 1200px) {
         font-size: 1.5rem;
@@ -455,6 +290,7 @@ const ReviewContent = styled.div`
 `;
 
 const ReviewDetail = styled.div`
+    font-family: "Pretendard";  
     font-size: 0.75rem;
     color: rgba(128, 128, 128, 1);
 
@@ -471,16 +307,24 @@ const ReviewButton = styled.div`
     background-color: rgba(81, 27, 66, 0.2);
     width: 12.5rem;
     height: 3.125rem;
-    border-radius: 25px;
+    border-radius: 3.125rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin: 1.25rem auto;
+    color: white;
+    font-family: "Pretendard-Bold";
+    font-size: 1rem;
+    position: fixed; /* 위치를 고정 */
+    bottom: 2rem; /* 아래에서 2rem */
+    left: 50%; /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 중앙 정렬 보정 */
 
     @media (min-width: 768px) {
         width: 15rem;
         height: 4rem;
+        font-size: 1.5rem;
     }
 
     @media (min-width: 1200px) {
@@ -489,18 +333,6 @@ const ReviewButton = styled.div`
     }
 `;
 
-const ReviewButtonText = styled.span`
-    color: rgba(255, 255, 255, 1);
-    font-family: Inter;
-    font-size: 1rem;
-
-    @media (min-width: 768px) {
-        font-size: 1.5rem;
-    }
-    @media (min-width: 1200px) {
-        font-size: 1.5rem;
-    }
-`;
 
 const NoReviews = styled.div`
     color: rgba(128, 128, 128, 1);
@@ -535,7 +367,9 @@ const ModalContent = styled.div`
     border-radius: 0.625rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    width: 10rem;
 `;
 
 const ModalOption = styled.button`
@@ -543,7 +377,7 @@ const ModalOption = styled.button`
     border: none;
     color: black;
     font-size: 1rem;
-    margin: 0.625rem 0;
+    margin: 0.625rem;
     cursor: pointer;
     &:hover {
         text-decoration: underline;
@@ -572,6 +406,5 @@ const ModalClose = styled.button`
         font-size: 1.125rem;
     }
 `;
-
 
 export default ClubInfoPage;
