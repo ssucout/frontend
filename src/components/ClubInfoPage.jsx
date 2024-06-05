@@ -138,7 +138,7 @@ const Container = styled.div`
 
 const Title = styled.div`
     color: rgba(55, 55, 55, 1);
-    font-family: "Pretendard";
+    font-family: "Pretendard-Bold";
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
