@@ -88,7 +88,7 @@ function ClubListPage() {
                 sortedClubs.sort((a, b) => b.totalStar - a.totalStar);
                 break;
             case 'lowest':
-                sortedClubs.sort((a, b) => a.totalStar - b.averageRating);
+                sortedClubs.sort((a, b) => a.totalStar - b.totalStar);
                 break;
             default:
                 break;
