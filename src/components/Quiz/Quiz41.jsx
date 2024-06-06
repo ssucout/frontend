@@ -74,12 +74,12 @@ const Buttons = styled.div`
 
   @media (min-width: 768px) {
     margin-top: 6rem;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   @media (min-width: 1200px) {
     margin-top: 6rem;
-    gap: 1rem;
+    gap: 2rem;
   }
 `;
 
@@ -87,7 +87,7 @@ const Button = styled.button`
   color: #818181;
   background-color: white;
   border: none;
-  width: 50rem;
+  width: 120%;
   height: 9.375rem;
   font-size: 2rem;
   border-radius: 3.125rem;
@@ -96,15 +96,15 @@ const Button = styled.button`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 120%;
     height: 6rem;
     font-size: 1rem;
   }
 
   @media (max-width: 480px) {
-    width: 100%;
+    width: 110%;
     height: 4rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 `;
 

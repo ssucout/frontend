@@ -231,13 +231,16 @@ const ClubCategory = styled.div`
     font-family: "Pretendard";
     text-align: left;
     font-size: 0.5rem;
+    width: 2rem;
 
     @media (min-width: 768px){
         font-size: 0.8rem;
+        width: 3rem;
     }
 
     @media (min-width: 1200px){
         font-size: 1rem;
+        width: 4rem;
     }
 `;
 
