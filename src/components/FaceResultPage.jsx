@@ -155,6 +155,7 @@ const Button = styled.button`
   font-family: "Pretendard-Bold";
   color: white;
   margin-bottom: 2rem;
+  border: none;
 
   @media (min-width: 768px){
     width: 30rem;
