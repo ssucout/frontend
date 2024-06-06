@@ -7,7 +7,7 @@ function Quiz4_2({ onAnswer }) {
 
   return (
     <Container>
-      <QuizNum>4 / 10</QuizNum>
+      <QuizNum>10 / 10</QuizNum>
       <QuizSentence>나는</QuizSentence>
       <Buttons>
         <Button onClick={() => navigate('/quiz/result/2d')}>2D가 좋다.</Button>

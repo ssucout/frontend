@@ -36,12 +36,14 @@ const SmallText = styled.div`
   text-align: center;
   font-size: 2rem;
   margin-bottom: 0;
+  margin-top: 1rem;
   color: #595959;
   font-weight: 700;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 480px) {
     font-size: 1.5rem;
+    margin-top: 3rem;
   }
 `;
 
@@ -49,7 +51,7 @@ const MainText = styled.div`
   text-align: center;
   font-size: 2.5rem;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: -2.5rem;
   color: #FFFFFF;
   font-weight: 1000;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 2px rgba(0, 0, 0, 0.1);
@@ -58,6 +60,7 @@ const MainText = styled.div`
   @media (min-width: 768px) {
     font-size: 4rem;
     -webkit-text-stroke: #4F4F4F .075rem;
+    margin-bottom: 1rem;
   }
 
 
@@ -76,10 +79,14 @@ const ImageContainer = styled.div`
   width: 100%;
   max-width: 500px;
   aspect-ratio: 4 / 5;
+  @media (max-width: 480px){
+  	margin-top: 0;
+	margin-bottom: 0;
+  }
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 90%;
   height: auto;
   max-width: 100%;
   max-height: 100%;
@@ -90,17 +97,21 @@ const StartButton = styled.button`
   width: 80%;
   height: 5rem;
   border-radius: 3.125rem;
+  border: none;
   font-size: 2rem;
   font-weight: 700;
   font-family: "Pretendatd-Bold";
   color: white;
-  margin-top: 2rem;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 2px rgba(0, 0, 0, 0.1);
 
   @media (min-width: 768px){
     width: 60%;
     font-size: 2.5rem;
     height: 7rem;
+    margin-top: 2rem;
+
   }
 
   @media (min-width: 1200px){

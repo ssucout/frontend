@@ -304,7 +304,7 @@ const ReviewDetail = styled.div`
 
 const ReviewButton = styled.div`
     box-shadow: 0px 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
-    background-color: rgba(81, 27, 66, 0.2);
+    background-color: #4F4F4F;
     width: 12.5rem;
     height: 3.125rem;
     border-radius: 3.125rem;
