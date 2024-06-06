@@ -43,6 +43,7 @@ const SmallText = styled.div`
 
   @media (max-width: 480px) {
     font-size: 1.5rem;
+    margin-top: 3rem;
   }
 `;
 
@@ -50,7 +51,7 @@ const MainText = styled.div`
   text-align: center;
   font-size: 2.5rem;
   margin-top: 0;
-  margin-bottom: 0rem;
+  margin-bottom: -2.5rem;
   color: #FFFFFF;
   font-weight: 1000;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 2px rgba(0, 0, 0, 0.1);
@@ -78,6 +79,10 @@ const ImageContainer = styled.div`
   width: 100%;
   max-width: 500px;
   aspect-ratio: 4 / 5;
+  @media (max-width: 480px){
+  	margin-top: 0;
+	margin-bottom: 0;
+  }
 `;
 
 const Image = styled.img`
@@ -97,14 +102,15 @@ const StartButton = styled.button`
   font-weight: 700;
   font-family: "Pretendatd-Bold";
   color: white;
-  margin-top: 1rem;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 2px rgba(0, 0, 0, 0.1);
 
   @media (min-width: 768px){
     width: 60%;
     font-size: 2.5rem;
     height: 7rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 
   }
 

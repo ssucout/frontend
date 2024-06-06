@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import upload_img from '../img/upload_Img.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import FaceResultPage from './FaceResultPage';
 
 function FaceMainPage() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [loading, setLoading] = useState(false); // 로딩 상태 추가
   const navigate = useNavigate();
 
   const handleFileChange = (event) => {
@@ -20,31 +20,41 @@ function FaceMainPage() {
     }
     const formData = new FormData();
     formData.append('file', selectedFile);
+    setLoading(true); // 파일 업로드 시작 시 로딩 상태로 설정
 
     try {
-      const response = await axios.post('/face', formData, {
+      const uploadResponse = await axios.post('/face', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
-      console.log('파일 업로드 성공:', response.data);
-      <FaceResultPage data={response.data} />
-      // 서버 응답에 따라 결과 페이지로 이동
-      navigate('/face/result', {state : response.data});
+      console.log('파일 업로드 성공:', uploadResponse.data);
+
+      // 파일 업로드 성공 후 데이터를 가져오기 위한 추가 요청
+      setLoading(false); // 데이터 요청 완료 시 로딩 상태 해제
+      navigate('/face/result', { state: uploadResponse.data });
     } catch (error) {
-      console.error('파일 업로드 실패:', error);
-      alert('파일 업로드에 실패했습니다.');
+      console.error('파일 업로드 또는 데이터 가져오기 실패:', error);
+      setLoading(false); // 요청 실패 시 로딩 상태 해제
+      alert('파일 업로드 또는 데이터 가져오기에 실패했습니다.');
+      navigate(-1); // 이전 페이지로 돌아가기
     }
   };
 
   return (
     <Background>
-      <SmallText>내가 왕이 될 상인가...</SmallText>
-      <MainText>내 관상과 <br />어울리는 동아리는?</MainText>
-      <UploadImg src={upload_img} />
-      <InputBox type="file" onChange={handleFileChange} />
-      <InfoText>*얼굴이 잘 나온 정면사진을 한 장만 업로드 해주세요</InfoText>
-      <OkayBox onClick={handleUpload}>확인하기</OkayBox>
+      {loading ? ( // 로딩 상태에 따른 조건부 렌더링
+        <LoadingMessage>로딩 중...</LoadingMessage>
+      ) : (
+        <>
+          <SmallText>내가 왕이 될 상인가...</SmallText>
+          <MainText>내 관상과 <br />어울리는 동아리는?</MainText>
+          <UploadImg src={upload_img} />
+          <InputBox type="file" onChange={handleFileChange} />
+          <InfoText>*얼굴이 잘 나온 정면사진을 한 장만 업로드 해주세요</InfoText>
+          <OkayBox onClick={handleUpload}>확인하기</OkayBox>
+        </>
+      )}
     </Background>
   );
 }
@@ -127,7 +137,6 @@ const InputBox = styled.input`
   @media (min-width: 1200px){
     width: 40rem; 
   }
-  
 `;
 
 const InfoText = styled.div`
@@ -151,6 +160,7 @@ const OkayBox = styled.button`
   width: 20rem;
   height: 4rem;
   border-radius: 3.125rem;
+  border: none;
   font-size: 2rem;
   font-weight: 700;
   font-family: "Pretendard-Bold";
@@ -165,6 +175,21 @@ const OkayBox = styled.button`
   @media (min-width: 1200px){
     width: 40rem;
     height: 6rem;
+    font-size: 2.5rem;
+  }
+`;
+
+const LoadingMessage = styled.div`
+  color: #595959;
+  font-family: "Pretendard-Bold";
+  font-size: 1.5rem;
+  text-align: center;
+
+  @media (min-width: 768px){
+    font-size: 2rem;
+  }
+
+  @media (min-width: 1200px){
     font-size: 2.5rem;
   }
 `;
