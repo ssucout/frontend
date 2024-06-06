@@ -28,7 +28,20 @@ function MakeReview() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (rating === 0) {
+            alert('별점을 입력해주세요!');
+            return;
+        }
 
+        if (!activityPeriod) {
+            alert('활동 시기를 선택해주세요!');
+            return;
+        }
+
+        if (review.trim() === "") {
+            alert('리뷰를 입력해주세요!');
+            return;
+        }
         const activityYear = parseInt(activityPeriod.split(' ')[0]);
 
         const data = {
