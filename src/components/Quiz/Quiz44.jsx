@@ -7,7 +7,7 @@ function Quiz4_4() {
 
   return (
     <Container>
-      <QuizNum>4 / 10</QuizNum>
+      <QuizNum>10 / 10</QuizNum>
       <QuizSentence>나는 운동을 할 때</QuizSentence>
       <Buttons>
         <Button onClick={() => navigate('/quiz/result/ath2')}>개인의 역량이 중요한 운동이 좋다</Button>

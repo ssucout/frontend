@@ -7,7 +7,7 @@ function Quiz3() {
   
   return (
     <Container>
-      <QuizNum>3 / 10</QuizNum>
+      <QuizNum>9 / 10</QuizNum>
       <QuizSentence>종강한다면<br />내가 하고싶은 활동은?</QuizSentence>
 
       <Buttons>

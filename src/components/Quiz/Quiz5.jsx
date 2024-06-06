@@ -7,7 +7,7 @@ function Quiz5({ onAnswer }) {
 
   return (
     <Container>
-      <QuizNum>5 / 10</QuizNum>
+      <QuizNum>Bonus!</QuizNum>
       <QuizSentence>나는 클래식 음악을 들으면</QuizSentence>
       <Buttons>
         <Button onClick={() => navigate('/quiz/result/mu1')}>힐링된다</Button>

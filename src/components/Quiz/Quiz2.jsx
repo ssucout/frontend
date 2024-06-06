@@ -2,17 +2,17 @@ import React from 'react'
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-function Quiz2({ onAnswer }) {
+function Quiz2() {
   const navigate = useNavigate();
   return (
     <Background>
       <QuizNum2>2 / 10</QuizNum2>
       <QuizSentence2>눈이 오면?</QuizSentence2>
       <Buttons2>
-        <Button2 onClick={() => navigate('/quiz/quiz3')}>봄이 온다.</Button2>
-        <Button2 onClick={() => navigate('/quiz/quiz3')}>물이 된다.</Button2>
-        <Button2 onClick={() => navigate('/quiz/quiz3')}>그에 따른 피해는 없었는지 찾아본다.</Button2>
-        <Button2 onClick={() => navigate('/quiz/quiz3')}>눈에 대해서 사람들과 대화를 나누고 싶다.</Button2>
+        <Button2 onClick={() => navigate('/quiz/quiz22')}>봄이 온다.</Button2>
+        <Button2 onClick={() => navigate('/quiz/quiz22')}>물이 된다.</Button2>
+        <Button2 onClick={() => navigate('/quiz/quiz22')}>그에 따른 피해는 없었는지 찾아본다.</Button2>
+        <Button2 onClick={() => navigate('/quiz/quiz22')}>눈에 대해서 사람들과 대화를 나누고 싶다.</Button2>
       </Buttons2>
     </Background>
   )
