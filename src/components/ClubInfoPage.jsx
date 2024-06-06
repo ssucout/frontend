@@ -14,7 +14,7 @@ function ClubInfoPage() {
     useEffect(() => {
         if (club) {
             console.log(`Fetching reviews for clubId: ${club.clubId}`); // 디버깅을 위한 로그
-            axios.get(`http://localhost:8080/review/${club.clubId}`)
+            axios.get(`/review/${club.clubId}`)
                 .then(response => {
                     console.log('Response data:', response.data); // 응답 데이터 확인
 
