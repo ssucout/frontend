@@ -79,7 +79,7 @@ const Buttons = styled.div`
   }
 
   @media (min-width: 1200px) {
-    margin-top: 6rem;
+    margin-top: 8rem;
     gap: 2rem;
   }
 `;
@@ -103,9 +103,9 @@ const Button = styled.button`
   }
 
   @media (min-width: 1200px) {
-    width: 700%;
-    height: 6rem;
-    font-size: 1.2rem;
+    width: 500%;
+    height: 7rem;
+    font-size: 2rem;
   }
 `;
 

@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-
 function MainModal({isOpen, closeModal}) {
   const navigate = useNavigate();
   const QuizPage = () => {
@@ -19,12 +18,11 @@ function MainModal({isOpen, closeModal}) {
     <BackgroundOverlay isOpen={isOpen} onClick={closeModal} />
     <ModalContainer isOpen={isOpen}>        
             <Box>
-            <ButtonContainer>
-            <ModalText>나에게 맞는 동아리 찾아보기</ModalText>
             <XButton onClick={closeModal}>x</XButton>
-            <Button1 onClick={FacePage}>관상으로 <br />나에게 맞는 동아리<br/> 찾으러 가기</Button1>
-            <Button2 onClick={QuizPage}>문답으로 <br />나에게 맞는 동아리 <br />찾으러 가기</Button2>
-
+              <ModalText>나에게 맞는 동아리 찾아보기</ModalText>
+            <ButtonContainer>
+              <Button1 onClick={FacePage}>관상으로 <br />나에게 맞는 동아리<br/> 찾으러 가기</Button1>
+              <Button2 onClick={QuizPage}>문답으로 <br />나에게 맞는 동아리 <br />찾으러 가기</Button2>
             </ButtonContainer>
             </Box>
             </ModalContainer>    
@@ -56,22 +54,25 @@ const ModalContainer = styled.div`
 `;
 
 const Box = styled.div`
-  width: 90vw;
-  height: 45vh;
+  position: relative; /* 추가 */
+  width: 90%;
+  height: auto;
   background-color: white;
   border-radius: 2.5rem;
-  position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   @media (min-width: 768px) {
-    width: 85vw;
-    height: 55vh;
+    width: 80%;
+    height: auto;
   }
 
   @media (min-width: 1200px) {
     width: 53rem;
-    height: 70vh;
+    height: auto;
   }
 `;
 
@@ -79,8 +80,8 @@ const ModalText = styled.div`
   position: relative;
   font-family: "Pretendard-Bold";
   font-size: 1.5rem;
-  top: 2.5rem;
-  color: #9a8ca3;
+  color: #9A8CA3;
+  margin-top: 2rem;
 
   @media (min-width: 768px) {
     font-size: 2.5rem;
@@ -88,102 +89,95 @@ const ModalText = styled.div`
 
   @media (min-width: 1200px) {
     font-size: 3rem;
-    top: 3.5rem;
   }
 `;
 
 const XButton = styled.button`
-  position: relative;
-  top: -2rem;
-  right: -9rem;
-  background-color: white;
+  position: absolute; /* 추가 */
+  top: 0.5rem; 
+  right: 0.5rem; /* 우측에서의 거리 */
+  background: none;
   color: #d8d8d8;
   border: none;
-  font-size: 1rem;
-
-  @media (min-width: 768px) {
-    font-size: 1.75rem;
-    top: -3.125rem;
-    right: -23rem;
-  }
-
-  @media (min-width: 1200px) {
-    font-size: 2rem;
-    top: -3.125rem;
-    right: -23rem;
-  }
-`;
-
-const Button1 = styled.button`
-  position: relative;
-  width: 90vw;
-  height: 8rem;
-  left: 50%;
-  border-radius: 3.75rem;
-  transform: translateX(-50%);
-  background-color: white;
-  color: #9b8ba3;
-  border-color: #9b8ba3;
-  border-width: 0.4rem;
-  font-family: "Pretendard-Bold";
   font-size: 1.5rem;
-  font-weight: bold;
-  top: 0rem;
-  margin-bottom: 1rem;
 
-  @media (min-width: 768px) {
-    width: 80vw;
-    height: 9rem;
+  @media (min-width: 768px){
     font-size: 2rem;
-    top: 2rem;
-  }
-
-  @media (min-width: 1200px) {
-    width: 42.6875rem;
-    height: 11.75rem;
-    font-size: 2.25rem;
-    top: 2rem;
-  }
-`;
-
-const Button2 = styled.button`
-  position: relative;
-  width: 90vw;
-  height: 8rem;
-  left: 50%;
-  border-radius: 3.75rem;
-  transform: translateX(-50%);
-  background-color: #9b8ba3;
-  color: white;
-  font-family: "Pretendard-Bold";
-  font-size: 1.5rem;
-  font-weight: bold;
-  top: -5%;
-  border: none;
-
-  @media (min-width: 768px) {
-    width: 80vw;
-    height: 9rem;
-    font-size: 2rem;
-    top: 2rem;
-  }
-
-  @media (min-width: 1200px) {
-    width: 42.6875rem;
-    height: 11.75rem;
-    font-size: 2.25rem;
-    top: 2rem;
+    top: 1rem;
+    right: 1rem;
   }
 `;
 
 const ButtonContainer = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+
+  @media (min-width: 768px){
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 1200px){
+    gap: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+`;
+
+const Button1 = styled.button`
+  width: 90%;
+  height: 6rem;
+  border-radius: 2rem;
+  background-color: white;
+  color: #9A8CA3;
+  border-color: #9A8CA3;
+  border-width: 0.2rem;
+  font-family: "Pretendard-Bold";
+  font-size: 1.2rem;
+  font-weight: bold;
+  top: 0rem;
+
+  @media (min-width: 768px) {
+    width: 90%;
+    height: 9rem;
+    font-size: 2rem;
+    border-radius: 2.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    width: 90%;
+    height: 11rem;
+    font-size: 2.25rem;
+    top: 2rem;
+    border-width: 0.4rem;
+  }
+`;
+
+const Button2 = styled.button`
+  width: 90%;
+  height: 6rem;
+  border-radius: 2rem;
+  background-color: #9A8CA3;
+  color: white;
+  font-family: "Pretendard-Bold";
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+
+  @media (min-width: 768px) {
+    height: 9rem;
+    font-size: 2rem;
+    border-radius: 2.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    height: 11rem;
+    font-size: 2.25rem;
+  }
 `;
 
 export default MainModal;

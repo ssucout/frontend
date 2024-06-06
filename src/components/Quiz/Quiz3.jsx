@@ -152,7 +152,7 @@ const ButtonText = styled.p`
   }
 
   @media (min-width: 1200px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 `;
 
