@@ -7,7 +7,7 @@ function Quiz4_5({ onAnswer }) {
 
   return (
     <Container>
-      <QuizNum>4 / 10</QuizNum>
+      <QuizNum>10 / 10</QuizNum>
       <QuizSentence>내 몸 속에는</QuizSentence>
       <Buttons>
         <Button onClick={() => navigate('/quiz/result/lee')}>이과의 피가 흐른다</Button>

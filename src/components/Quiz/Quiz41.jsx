@@ -6,12 +6,12 @@ function Quiz4_1() {
   const navigate = useNavigate();
   return (
     <Container>
-      <QuizNum>4 / 10</QuizNum>
+      <QuizNum>10 / 10</QuizNum>
       <QuizSentence>나는 무대에서</QuizSentence>
       <Buttons>
         <Button onClick={() => navigate('/quiz/quiz5')}>나의 노래/악기 실력을 뽐내고 싶다.</Button>
         <Button onClick={() => navigate('/quiz/result/dan')}>기깔난 나의 춤선을 보여주고 싶다.</Button>
-        <Button onClick={() => navigate('/quiz/result/act')}>메소드 연기로 다른 사람들에게 감동을 주고 싶다.</Button>
+        <Button onClick={() => navigate('/quiz/result/act')}>메소드 연기로 사람들에게 감동을 주고 싶다.</Button>
       </Buttons>
     </Container>
   )
@@ -88,7 +88,7 @@ const Button = styled.button`
   background-color: white;
   border: none;
   width: 120%;
-  height: 9.375rem;
+  height: 8rem;
   font-size: 2rem;
   border-radius: 3.125rem;
   font-family: "The-Jams";
@@ -98,13 +98,13 @@ const Button = styled.button`
   @media (max-width: 768px) {
     width: 120%;
     height: 6rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   @media (max-width: 480px) {
     width: 110%;
     height: 4rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 `;
 

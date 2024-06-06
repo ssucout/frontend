@@ -7,7 +7,7 @@ function Quiz4_6({onAnswer}) {
 
   return (
     <Container>
-        <QuizNum>4 / 10</QuizNum>
+        <QuizNum>10 / 10</QuizNum>
         <QuizSentence>채플 출석을 다 채운 후 나는</QuizSentence>
         <Buttons>
         <Button onClick={() => navigate('/quiz/result/ch')}>아 8번 다 채웠네 이제 안가도 되겠지 ~?</Button>

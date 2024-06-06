@@ -7,7 +7,7 @@ function Quiz4_3() {
 
   return (
     <Container>
-      <QuizNum>4 / 10</QuizNum>
+      <QuizNum>10 / 10</QuizNum>
       <QuizSentence>내가 선호하는 봉사활동은</QuizSentence>
       <Buttons>
         <Button onClick={() => navigate('/quiz/result/vol2')}>행사 staff, 줍깅과 같은 일회성 봉사</Button>
