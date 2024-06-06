@@ -19,7 +19,7 @@ function ClubListPage() {
 
     useEffect(() => {
         if (searchTerm) {
-            axios.get(`http://localhost:8080/club/list/search?term=${searchTerm}`)
+            axios.get(`/club/list/search?term=${searchTerm}`)
                 .then(response => {
                     setClubs(response.data);
                     setHasMore(false); // 검색 결과는 무한 스크롤로 추가되지 않음
@@ -37,7 +37,7 @@ function ClubListPage() {
 
     const fetchClubs = useCallback(async (page) => {
         try {
-            const response = await axios.get(`http://localhost:8080/club/list?page=${page}&limit=${clubsPerPage}`);
+            const response = await axios.get(`/club/list?page=${page}&limit=${clubsPerPage}`);
             if (response.data.length === 0) {
                 setHasMore(false);
             } else {

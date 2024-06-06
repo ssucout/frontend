@@ -22,7 +22,7 @@ function FaceMainPage() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:8080/face', formData, {
+      const response = await axios.post('/face', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

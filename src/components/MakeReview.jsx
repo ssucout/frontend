@@ -38,7 +38,7 @@ function MakeReview() {
         };
         console.log('데이터 전송: ', data);
 
-        axios.post(`http://localhost:8080/review/${club.clubId}/write`, data, {
+        axios.post(`/review/${club.clubId}/write`, data, {
             headers: {
                 'Content-Type': 'application/json',
             },
