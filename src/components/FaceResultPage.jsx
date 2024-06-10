@@ -165,7 +165,7 @@ const Button = styled.button`
   @media (min-width: 1200px){
     width: 40rem;
     height: 6rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
   } 
 `;
 export default FaceResultPage

@@ -153,7 +153,7 @@ const Buttons = styled.button`
 
   @media (min-width: 768px) {
     width: 40rem;
-    height: 9rem;
+    height: 8rem;
     font-size: 2rem;
   }
 
