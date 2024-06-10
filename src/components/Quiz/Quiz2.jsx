@@ -104,7 +104,6 @@ const Button2 = styled.button`
 
   @media (min-width: 1200px) {
     width: 150%;
-    font-size: 2rem;
     height: 7rem;
   }
 `;

@@ -94,7 +94,7 @@ const Image = styled.img`
 
 const StartButton = styled.button`
   background-color: #4F4F4F;
-  width: 80%;
+  width: 20rem;
   height: 5rem;
   border-radius: 3.125rem;
   border: none;
@@ -107,7 +107,7 @@ const StartButton = styled.button`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 2px 2px rgba(0, 0, 0, 0.1);
 
   @media (min-width: 768px){
-    width: 60%;
+    width: 30rem;
     font-size: 2.5rem;
     height: 7rem;
     margin-top: 2rem;
@@ -115,7 +115,7 @@ const StartButton = styled.button`
   }
 
   @media (min-width: 1200px){
-    width: 40%;
+    width: 35rem;
     height: 7.5rem;
   }
 `;

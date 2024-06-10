@@ -43,25 +43,23 @@ const QuizNum = styled.div`
         /* padding-top: 2rem; */
     }
     @media (min-width: 1200px){
-      margin-top: 3rem;
       font-size: 2.5rem;
     }
 `;
 
 const QuizSentence = styled.div`
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #656161;
     margin-top: 3rem;
 
     @media (min-width: 768px){
       margin-top: 6rem;
-      font-size: 2.5rem;
     }
 
     @media(min-width: 1200px){
       margin-top: 6rem;
-      font-size: 3em;
+      font-size: 2.5rem;
     }
 `;
 
@@ -78,7 +76,7 @@ const Buttons = styled.div`
   }
 
   @media (min-width: 1200px){
-    margin-top: 6rem;
+    margin-top: 12rem;
     gap: 2rem;
   }
 `;
@@ -107,5 +105,6 @@ const Button = styled.button`
   }
 
 `;
+
 
 export default Quiz27;

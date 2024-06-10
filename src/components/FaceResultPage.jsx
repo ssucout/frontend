@@ -73,7 +73,7 @@ const ResultBox = styled.div`
     background-color: white;
     display: flex;
     width: 20rem;
-    height: 20rem;
+    height: auto;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 2rem;
