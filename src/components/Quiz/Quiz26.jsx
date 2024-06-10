@@ -43,7 +43,6 @@ const QuizNum = styled.div`
         /* padding-top: 2rem; */
     }
     @media (min-width: 1200px){
-      margin-top: 3rem;
       font-size: 2.5rem;
     }
 `;
@@ -77,7 +76,7 @@ const Buttons = styled.div`
   }
 
   @media (min-width: 1200px){
-    margin-top: 6rem;
+    margin-top: 12rem;
     gap: 2rem;
   }
 `;
@@ -95,16 +94,17 @@ const Button = styled.button`
   cursor: pointer;
 
   @media (min-width: 768px){
-    width: 30rem;
+    width: 300%;
     height: 7rem;
     font-size: 1.5rem;
   }
 
   @media (min-width: 1200px){
-    width: 35rem;
+    width: 400%;
     height: 7rem;
   }
 
 `;
+
 
 export default Quiz26;

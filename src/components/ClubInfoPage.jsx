@@ -124,16 +124,8 @@ const Container = styled.div`
     height: 100vh;
     position: relative;
     background-color: rgba(255, 255, 255, 1);
-    padding: 1.25rem;
+    /* margin: 1.25rem; */
     
-    @media (min-width: 768px) {
-        width: 100vw;
-    }
-
-    @media (min-width: 1200px) {
-        width: 100vw;
-        height: 100vh;
-    }
 `;
 
 const Title = styled.div`
@@ -192,6 +184,7 @@ const HeadingBanner = styled.div`
   display: flex;
   justify-content:row;
   margin-top: 2rem;
+  margin-left: 1rem;
 `;
 
 const Header = styled.button`
@@ -205,6 +198,7 @@ const Header = styled.button`
     justify-content: center;
     align-items: center;
     margin-left: auto;
+    margin-right: 1rem;
     cursor: pointer;
     color: white;
     font-family: "Pretendard-Bold";
@@ -225,7 +219,7 @@ const Header = styled.button`
 
 const Separator = styled.div`
     border: 1px solid rgba(226, 226, 226, 1);
-    margin: 1.25rem 0;
+    margin: 0 1rem ;
     margin-top: 0rem;
 `;
 
@@ -236,6 +230,7 @@ const Review = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0 1rem;
 `;
 
 const ReviewHeader = styled.div`
@@ -244,6 +239,7 @@ const ReviewHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.5rem;
+    margin-top: 1rem;
 
     @media (max-width: 480px){
         margin-bottom: 0.3rem;

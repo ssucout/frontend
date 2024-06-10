@@ -79,7 +79,7 @@ const Buttons = styled.div`
   }
 
   @media (min-width: 1200px) {
-    margin-top: 6rem;
+    margin-top: 10rem;
     gap: 2rem;
   }
 `;
@@ -88,8 +88,8 @@ const Button = styled.button`
   color: #818181;
   background-color: white;
   border: none;
-  width: 50rem;
-  height: 9.375rem;
+  width: 200%;
+  height: 7rem;
   font-size: 2rem;
   border-radius: 3.125rem;
   font-family: 'The-Jams';

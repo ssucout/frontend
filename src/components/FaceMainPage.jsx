@@ -23,7 +23,7 @@ function FaceMainPage() {
     setLoading(true); // 파일 업로드 시작 시 로딩 상태로 설정
 
     try {
-      const uploadResponse = await axios.post('/face', formData, {
+      const uploadResponse = await axios.post('http://localhost:8080/face', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
