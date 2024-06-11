@@ -73,20 +73,21 @@ const ResultBox = styled.div`
     background-color: white;
     display: flex;
     width: 20rem;
-    height: auto;
+    min-height: 20rem;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 2rem;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 1rem; /* 내용이 ResultBox 안에 위치하도록 패딩 추가 */
 
     @media (min-width: 768px){
       width: 30rem;
-      height: 30rem;
+      min-height: 30rem;
     }
 
     @media (min-width: 1200px){
       width: 40rem;
-      height: 40rem;
+      min-height: 40rem;
     }
 `;
 
